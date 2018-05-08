@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}Musée du Louvre{% endblock %}</title>
+        {% block stylesheets %}
+
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     </head>
+
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <!-- Main navigation -->
+        {% block navigation %}
+
+        {% endblock %}
+    <!-- Body contains -->
+        {% block body %}
+
+        {% endblock %}
+    <!-- Footer -->
+        {% block footer %}
+
+        {% endblock %}
+    <!-- Js scripts -->
+        {% block javascripts %}
+
+        {% endblock %}
+
     </body>
 </html>
