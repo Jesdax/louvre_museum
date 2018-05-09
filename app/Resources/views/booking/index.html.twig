@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Accueil & Billetterie {% endblock %}
+
+{% block body %}
+<main class="container">
+    <div class="row">
+        <h3>Bienvenue sur la billetterie non-officiel du musée du Louvre.</h3>
+    </div><br/>
+    <div class="row">
+        <h4>Etape 1 - Réservation des e-billets</h4>
+    </div>
+    <div class="row">
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    </div>
+</main>
+
+{% endblock %}

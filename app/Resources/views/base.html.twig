@@ -5,27 +5,48 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Musée du Louvre{% endblock %}</title>
         {% block stylesheets %}
-
+            <!-- CDN Bootstrap for prod -->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+            <!-- Bootstrap for dev -->
+            <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('public/ico/favicon.ico') }}"/>
     </head>
 
     <body>
     <!-- Main navigation -->
         {% block navigation %}
-
+    <nav class="navbar navbar-dark bg-dark" role="navigation">
+        <a class="navbar-brand" href="https://www.louvre.fr" target="_blank"><img src="{{ asset('public/images/logo-louvre.jpg') }}" alt="Logo"/></a>
+    </nav>
         {% endblock %}
+
     <!-- Body contains -->
         {% block body %}
-
         {% endblock %}
+
     <!-- Footer -->
         {% block footer %}
-
+    <footer>
+        <div>
+            <div>
+                logo carte
+            </div>
+            <div>
+                <a href="#">Site Officiel</a>
+                <a href="#">CGV</a>
+                <a href="#">Mentions légales</a>
+                <a href="#">Contact us</a>
+            </div>
+        </div>
+    </footer>
         {% endblock %}
     <!-- Js scripts -->
         {% block javascripts %}
-
+    <!-- CDN js -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!-- Js for dev -->
+            <script src="{{ asset('public/js/bootstrap.js') }}"></script>
         {% endblock %}
 
     </body>

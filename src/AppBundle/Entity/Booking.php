@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Booking
 {
+
+    const NB_TICKET_MINIMUM = 1;
+    const NB_TICKET_MAXIMUM = 10;
+
+    const DAY = true;
+    const HALF_DAY = false;
+
     /**
      * @var int
      *
@@ -26,7 +33,7 @@ class Booking
      *
      * @ORM\Column(name="type", type="boolean")
      */
-    private $type;
+    private $type = self::DAY;
 
     /**
      * @var \DateTime
@@ -47,7 +54,7 @@ class Booking
      *
      * @ORM\Column(name="nbTickets", type="integer")
      */
-    private $nbTickets;
+    private $nbTickets = 1;
 
     /**
      * @var string
