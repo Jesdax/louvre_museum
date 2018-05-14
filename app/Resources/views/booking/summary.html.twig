@@ -35,14 +35,12 @@
             <form action="{{ path('summary') }}" method="POST">
                 <script
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_hHdbjuOgUzOjMWCtM23MHPhq"
+                        data-key="{{ stripe_public_key }}"
                         data-amount="{{ booking.totalPrice * 100}}"
-                        data-name="Paiement protégé"
-                        data-description="Paiement test"
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-description="Paiement - Billetterie du Louvre"
                         data-locale="auto"
                         data-currency="eur"
-                        data-zip-code="true">
+                        data-email="{{ booking.email }}">
                 </script>
             </form>
 
