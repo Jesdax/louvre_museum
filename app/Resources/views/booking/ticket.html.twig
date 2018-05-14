@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent() }} - Etape 2{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <div class="row">
+            <div>
+                <h2>Etape 2 - Commande</h2>
+            </div>
+        </div>
+        <div class="well">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <a href="{{ path('accueil') }}"><button class="btn-secondary btn" type="button" name="back">Retour</button></a>
+            <button class="btn-secondary btn" type="submit" name="p2w">Poursuivre le paiement</button>
+            {{ form_end(form) }}
+        </div>
+    </main>
+{% endblock %}

@@ -1,20 +1,51 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} - Etape 2{% endblock %}
+{% block title %}{{ parent() }} - Résumé {% endblock %}
 
 {% block body %}
     <main class="container">
-        <div class="row">
+        <div class="">
             <div>
-                <h2>Etape 2 - Commande</h2>
+                <h2>Récapitulatif de la commande</h2>
             </div>
         </div>
-        <div class="well">
-            {{ form_start(form) }}
-            {{ form_widget(form) }}
-            <a href="{{ path('accueil') }}"><button class="btn-secondary btn" type="button" name="back">Retour</button></a>
-            <button class="btn-secondary btn" type="submit" name="p2w">Poursuivre le paiement</button>
-            {{ form_end(form) }}
+        <div class="table">
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Prix du billet</th>
+                </tr>
+
+                {% for ticket in booking.tickets %}
+                    <tr>
+                        <td>{{ ticket.name }}</td>
+                        <td>{{ ticket.firstname }}</td>
+                        <td>{{ ticket.price }}</td>
+                    </tr>
+                {% endfor %}
+
+                <tr>
+                    <td>Total commande</td>
+                    <td>{{ booking.totalPrice }}</td>
+                </tr>
+
+            </table>
+
+            <form action="{{ path('summary') }}" method="POST">
+                <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="pk_test_hHdbjuOgUzOjMWCtM23MHPhq"
+                        data-amount="{{ booking.totalPrice * 100}}"
+                        data-name="Paiement protégé"
+                        data-description="Paiement test"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto"
+                        data-currency="eur"
+                        data-zip-code="true">
+                </script>
+            </form>
         </div>
     </main>
+
 {% endblock %}

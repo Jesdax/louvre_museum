@@ -56,7 +56,7 @@ class BookingController extends Controller
             $bookingManager->setBookingSession($booking);
             return $this->redirectToRoute('summary');
         }
-        return $this->render('booking/summary.html.twig', ['form' => $formTicket->createView()]);
+        return $this->render('booking/ticket.html.twig', ['form' => $formTicket->createView()]);
     }
 
 }
