@@ -11,17 +11,24 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\Booking;
 use AppBundle\Entity\Ticket;
+use AppBundle\Services\PriceService;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use AppBundle\Services\AgeService;
 
 class BookingManager
 {
 
     private $session;
+    private $ageService;
+    private $priceService;
 
 
-    public function __construct(SessionInterface $session)
+    public function __construct(SessionInterface $session, AgeService $ageService, PriceService $priceService)
     {
         $this->session = $session;
+        $this->ageService = $ageService;
+        $this->priceService = $priceService;
+
     }
 
 
@@ -45,6 +52,26 @@ class BookingManager
                 $booking->addTicket(new Ticket());
             }
         }
+    }
+
+    public function getPriceOfTicket(Booking $booking)
+    {
+        $tickets = $booking->getTickets();
+        $totalPrice = 0;
+
+        foreach ($tickets as $ticket) {
+            $age = $this->ageService->calculAge($booking->getDateOfVisit(),$ticket->getDateOfBirth());
+            $ticket->setAge($age);
+
+            $price = $this->priceService->priceTicket($ticket->getReducedPrice(), $ticket->getAge(), $booking->getType());
+            $ticket->setPrice($price);
+
+            $totalPrice += $ticket->getPrice();
+
+        }
+        $booking->setTotalPrice($totalPrice);
+
+        return $booking;
     }
 
 }

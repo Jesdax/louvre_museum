@@ -69,6 +69,12 @@ class Booking
     private $tickets;
 
     /**
+     * @var int
+     * @ORM\Column(name="totalPrice", type="integer")
+     */
+    private $totalPrice;
+
+    /**
      * Get id
      *
      * @return int
@@ -237,5 +243,29 @@ class Booking
     public function getTickets()
     {
         return $this->tickets;
+    }
+
+    /**
+     * Set totalPrice
+     *
+     * @param integer $totalPrice
+     *
+     * @return Booking
+     */
+    public function setTotalPrice($totalPrice)
+    {
+        $this->totalPrice = $totalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get totalPrice
+     *
+     * @return integer
+     */
+    public function getTotalPrice()
+    {
+        return $this->totalPrice;
     }
 }

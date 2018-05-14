@@ -12,6 +12,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Booking
 {
+
+    const NB_TICKET_MINIMUM = 1;
+    const NB_TICKET_MAXIMUM = 10;
+
+    const DAY = true;
+    const HALF_DAY = false;
+
     /**
      * @var int
      *
@@ -26,7 +33,7 @@ class Booking
      *
      * @ORM\Column(name="type", type="boolean")
      */
-    private $type;
+    private $type = self::DAY;
 
     /**
      * @var \DateTime
@@ -47,7 +54,7 @@ class Booking
      *
      * @ORM\Column(name="nbTickets", type="integer")
      */
-    private $nbTickets;
+    private $nbTickets = 1;
 
     /**
      * @var string
@@ -60,6 +67,12 @@ class Booking
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy="booking", cascade={"persist"})
      */
     private $tickets;
+
+    /**
+     * @var int
+     * @ORM\Column(name="totalPrice", type="integer")
+     */
+    private $totalPrice;
 
     /**
      * Get id
@@ -190,5 +203,45 @@ class Booking
     {
         return $this->email;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add ticket
+     *
+     * @param \AppBundle\Entity\Ticket $ticket
+     *
+     * @return Booking
+     */
+    public function addTicket(\AppBundle\Entity\Ticket $ticket)
+    {
+        $this->tickets[] = $ticket;
+
+        return $this;
+    }
+
+    /**
+     * Remove ticket
+     *
+     * @param \AppBundle\Entity\Ticket $ticket
+     */
+    public function removeTicket(\AppBundle\Entity\Ticket $ticket)
+    {
+        $this->tickets->removeElement($ticket);
+    }
+
+    /**
+     * Get tickets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTickets()
+    {
+        return $this->tickets;
+    }
+}

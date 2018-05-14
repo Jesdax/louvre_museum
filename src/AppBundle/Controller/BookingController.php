@@ -53,10 +53,27 @@ class BookingController extends Controller
         $formTicket->handleRequest($request);
 
         if ($formTicket->isSubmitted() && $formTicket->isValid()) {
+            $bookingManager->getPriceOfTicket($booking);
             $bookingManager->setBookingSession($booking);
             return $this->redirectToRoute('summary');
         }
         return $this->render('booking/ticket.html.twig', ['form' => $formTicket->createView()]);
+    }
+
+    /**
+     * @param Request $request
+     * @param BookingManager $bookingManager
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     * @Route("/summary", name="summary")
+     */
+    public function summaryAction(Request $request, BookingManager $bookingManager)
+    {
+        $booking = $bookingManager->getBookingSession();
+
+        if ($request->getMethod() === Request::METHOD_POST) {
+            return $this->redirectToRoute('final_summary');
+        }
+        return $this->render('booking/summary.html.twig', ['booking' => $booking]);
     }
 
 }

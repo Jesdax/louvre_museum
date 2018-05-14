@@ -19,7 +19,7 @@
 
                 {% for ticket in booking.tickets %}
                     <tr>
-                        <td>{{ ticket.name }}</td>
+                        <td>{{ ticket.lastname }}</td>
                         <td>{{ ticket.firstname }}</td>
                         <td>{{ ticket.price }}</td>
                     </tr>
@@ -45,6 +45,7 @@
                         data-zip-code="true">
                 </script>
             </form>
+
         </div>
     </main>
 
