@@ -12,6 +12,9 @@ namespace AppBundle\Manager;
 use AppBundle\Entity\Booking;
 use AppBundle\Entity\Ticket;
 use AppBundle\Services\PriceService;
+use AppBundle\Services\StripeInit;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use AppBundle\Services\AgeService;
 
@@ -21,13 +24,17 @@ class BookingManager
     private $session;
     private $ageService;
     private $priceService;
+    private $stripeInit;
+    private $entityManager;
 
 
-    public function __construct(SessionInterface $session, AgeService $ageService, PriceService $priceService)
+    public function __construct(SessionInterface $session, AgeService $ageService, PriceService $priceService, StripeInit $stripeInit, EntityManagerInterface $entityManager)
     {
         $this->session = $session;
         $this->ageService = $ageService;
         $this->priceService = $priceService;
+        $this->stripeInit = $stripeInit;
+        $this->entityManager = $entityManager;
 
     }
 
@@ -72,6 +79,24 @@ class BookingManager
         $booking->setTotalPrice($totalPrice);
 
         return $booking;
+    }
+
+    public function payStep(Request $request, Booking $booking)
+    {
+        $transaction = $this->stripeInit->payment($booking, $request->request->get('stripeToken'));
+
+        if ($transaction !== false) {
+            $this->entityManager->persist($booking);
+            $this->entityManager->flush();
+
+        }
+
+        return $transaction;
+    }
+
+    public function clearSession()
+    {
+        $this->session->clear();
     }
 
 

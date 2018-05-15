@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} - Résumé de votre commande {% endblock %}
+
+{% block body %}
+
+    <main class="container">
+        <div>
+            <div>
+                <h2>Récapitulatif de votre commande</h2>
+            </div>
+            <div>
+                <h3>Commande n° </h3>
+            </div>
+            <div>
+                <table>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Prix du billet</th>
+                    </tr>
+
+                    {% for ticket in booking.tickets %}
+                        <tr>
+                            <td>{{ ticket.lastname }}</td>
+                            <td>{{ ticket.firstname }}</td>
+                            <td>{{ ticket.price }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    <tr>
+                        <td>Total commande</td>
+                        <td>{{ booking.totalPrice }}</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </main>
+{% endblock %}

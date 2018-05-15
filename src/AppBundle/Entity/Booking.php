@@ -209,6 +209,7 @@ class Booking
     public function __construct()
     {
         $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createAt = new \DateTime();
     }
 
     /**
@@ -221,6 +222,7 @@ class Booking
     public function addTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setBooking($this);
 
         return $this;
     }
@@ -233,6 +235,7 @@ class Booking
     public function removeTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets->removeElement($ticket);
+        $ticket->setBooking(null);
     }
 
     /**

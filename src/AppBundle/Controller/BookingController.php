@@ -71,9 +71,25 @@ class BookingController extends Controller
         $booking = $bookingManager->getBookingSession();
 
         if ($request->getMethod() === Request::METHOD_POST) {
-            return $this->redirectToRoute('final_summary');
+            if ($bookingManager->payStep($request, $booking)) {
+                return $this->redirectToRoute('final_summary');
+            }
         }
+
         return $this->render('booking/summary.html.twig', ['booking' => $booking]);
+    }
+
+    /**
+     * @param BookingManager $bookingManager
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/final_summary", name="final_summary")
+     */
+    public function finalSummaryAction(BookingManager $bookingManager)
+    {
+        $booking = $bookingManager->getBookingSession();
+        $bookingManager->clearSession();
+
+        return $this->render('booking/final_summary.html.twig', ['booking' => $booking]);
     }
 
 }
