@@ -52,16 +52,6 @@ class BookingManager
         return $booking;
     }
 
-    public function bookingInitialisation()
-    {
-        try {
-            $booking = $this->getBookingSession();
-        } catch (\Exception $e) {
-            $booking = new Booking();
-        }
-
-        return $booking;
-    }
 
     public function bookingComplete(Booking $booking)
     {

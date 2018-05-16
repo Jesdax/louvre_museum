@@ -18,19 +18,21 @@ class BookingController extends Controller
 
     /**
      * @param Request $request
+     * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
      * @Route("/", name="accueil")
      */
     public function indexAction(Request $request, BookingManager $bookingManager)
     {
 
-        $booking = $bookingManager->bookingInitialisation();
+        $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $bookingManager->bookingComplete($booking);
             $bookingManager->setBookingSession($booking);
+
             return $this->redirectToRoute('ticket');
         }
         return $this->render('booking/index.html.twig', ['form' => $form->createView()]);
