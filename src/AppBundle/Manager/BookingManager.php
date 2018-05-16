@@ -11,6 +11,7 @@ namespace AppBundle\Manager;
 
 use AppBundle\Entity\Booking;
 use AppBundle\Entity\Ticket;
+use AppBundle\Services\MailService;
 use AppBundle\Services\PriceService;
 use AppBundle\Services\StripeInit;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,15 +27,17 @@ class BookingManager
     private $priceService;
     private $stripeInit;
     private $entityManager;
+    private $email;
 
 
-    public function __construct(SessionInterface $session, AgeService $ageService, PriceService $priceService, StripeInit $stripeInit, EntityManagerInterface $entityManager)
+    public function __construct(SessionInterface $session, AgeService $ageService, PriceService $priceService, StripeInit $stripeInit, EntityManagerInterface $entityManager, MailService $mailService)
     {
         $this->session = $session;
         $this->ageService = $ageService;
         $this->priceService = $priceService;
         $this->stripeInit = $stripeInit;
         $this->entityManager = $entityManager;
+        $this->email = $mailService;
 
     }
 
@@ -87,6 +90,8 @@ class BookingManager
         if ($transaction !== false) {
             $this->entityManager->persist($booking);
             $this->entityManager->flush();
+
+            $this->email->sendMail();
 
         }
 
