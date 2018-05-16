@@ -24,11 +24,12 @@ class BookingController extends Controller
     public function indexAction(Request $request, BookingManager $bookingManager)
     {
 
-        $booking = new Booking();
+        $booking = $bookingManager->bookingInitialisation();
         $form = $this->createForm(BookingType::class, $booking);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $bookingManager->bookingComplete($booking);
             $bookingManager->setBookingSession($booking);
             return $this->redirectToRoute('ticket');
         }
