@@ -38,7 +38,6 @@ class BookingManager
 
     }
 
-
     public function setBookingSession(Booking $booking)
     {
         $this->session->set('booking', $booking);
@@ -50,7 +49,7 @@ class BookingManager
         return $booking;
     }
 
-    public function bookingInitialisation(Booking $booking)
+    public function bookingComplete(Booking $booking)
     {
         while (count($booking->getTickets()) !== $booking->getNbTickets()) {
             if (count($booking->getTickets()) > $booking->getNbTickets()) {
@@ -67,7 +66,7 @@ class BookingManager
         $totalPrice = 0;
 
         foreach ($tickets as $ticket) {
-            $age = $this->ageService->calculAge($booking->getDateOfVisit(),$ticket->getDateOfBirth());
+            $age = $this->ageService->callAge($booking->getDateOfVisit(),$ticket->getDateOfBirth());
             $ticket->setAge($age);
 
             $price = $this->priceService->priceTicket($ticket->getReducedPrice(), $ticket->getAge(), $booking->getType());

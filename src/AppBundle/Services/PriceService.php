@@ -21,6 +21,12 @@ class PriceService
 
     public function priceTicket($reducedPrice, $age, $type)
     {
+        $price = 0;
+
+        if (!is_bool($reducedPrice) | !is_int($age) | !is_bool($type)) {
+            throw new \InvalidArgumentException('Les arguments son erronés !');
+        }
+
         if (!$reducedPrice) {
             switch ($age) {
                 case ($age >= 12 && $age < 60):

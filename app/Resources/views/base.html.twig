@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}Musée du Louvre{% endblock %}</title>
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('public/css/testDev.css') }}">
             <!-- CDN Bootstrap for prod -->
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
             <!-- Bootstrap for dev -->
@@ -14,20 +15,31 @@
     </head>
 
     <body>
+    <div class="bodyTest">
     <!-- Main navigation -->
         {% block navigation %}
-    <nav class="navbar navbar-dark bg-dark" role="navigation">
-        <a class="navbar-brand" href="{{ path('accueil') }}"><img src="{{ asset('public/images/logo-louvre.jpg') }}" alt="Logo"/></a>
+    <nav class="container navbar red" role="navigation">
+        <div>
+            <a href="{{ path('accueil') }}"><img src="{{ asset('public/images/logo-louvre.jpg') }}" alt="Logo du site de la billetterie non officiel du Louvre"></a>
+        </div>
+        <ul>
+            <li>
+                <ul class="langague">
+                    <li><a href="#">Anglais</a></li>
+                    <li><a href="#">Français</a></li>
+                </ul>
+            </li>
+        </ul>
     </nav>
         {% endblock %}
 
-    <!-- Body contains -->
+    <!-- Body content -->
         {% block body %}
         {% endblock %}
 
     <!-- Footer -->
         {% block footer %}
-    <footer>
+    <footer class="footer">
         <div>
             <div>
                 logo carte
@@ -41,6 +53,7 @@
         </div>
     </footer>
         {% endblock %}
+    </div>
     <!-- Js scripts -->
         {% block javascripts %}
     <!-- CDN js -->

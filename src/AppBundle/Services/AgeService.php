@@ -13,13 +13,10 @@ use AppBundle\Entity\Ticket;
 
 class AgeService
 {
-    public function calculAge($dateOfVisit, $dateOfBirth)
+    public function callAge(\DateTime $dateOfVisit, \DateTime $dateOfBirth)
     {
-        $age = date_diff($dateOfVisit, $dateOfBirth);
-        $age = get_object_vars($age);
-        $age = $age['y'];
 
-        return $age;
+        return date_diff($dateOfVisit,$dateOfBirth)->y;
     }
 
 }

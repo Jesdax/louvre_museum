@@ -47,7 +47,7 @@ class BookingController extends Controller
     public function ticketAction(Request $request, BookingManager $bookingManager)
     {
         $booking = $request->getSession()->get('booking');
-        $bookingManager->bookingInitialisation($booking);
+        $bookingManager->bookingComplete($booking);
 
         $formTicket = $this->createForm(TicketsType::class, $booking);
         $formTicket->handleRequest($request);
@@ -55,6 +55,9 @@ class BookingController extends Controller
         if ($formTicket->isSubmitted() && $formTicket->isValid()) {
             $bookingManager->getPriceOfTicket($booking);
             $bookingManager->setBookingSession($booking);
+
+            // echo '<pre>', var_dump($booking->getTickets()); die;
+
             return $this->redirectToRoute('summary');
         }
         return $this->render('booking/ticket.html.twig', ['form' => $formTicket->createView()]);
