@@ -9,33 +9,32 @@
 namespace AppBundle\Services;
 
 
+use AppBundle\Entity\Booking;
+
 class MailService
 {
 
     private $email;
+    private $twig;
 
-    public function __construct(\Swift_Mailer $mailer)
+    public function __construct(\Swift_Mailer $mailer, \Twig_Environment $twig_Environment)
     {
         $this->email = $mailer;
+        $this->twig = $twig_Environment;
     }
 
-    public function sendMail()
+    public function sendMail(Booking $booking)
     {
-        $testEmail = 'augustin_kave_08@outlook.fr';
 
         $message = (new \Swift_Message())
             ->setFrom('augustin.kavera@gmail.com')
-            ->setTo($testEmail)
-            ->setSubject('Votre e-billet pour l\'entrée du musée du Louvre');
+            ->setSubject('Votre e-billet pour l\'entrée du musée du Louvre')
+            ->setTo($booking->getEmail());
+
+        $logo = $message->embed(\Swift_Image::fromPath('public/images/logo-louvre.jpg'));
 
         $message->setBody(
-            '<hmtl>' .
-            '<body>' .
-            ' Mail test de la commande test' .
-            '</body>' .
-            '</hmtl>',
-            'text/html', 'UTF-8'
-        );
+            $this->twig->render('booking/email.html.twig', ['booking' => $booking, 'tickets' => $booking->getTickets(), 'logo' => $logo]), 'text/html', 'UTF-8');
 
         $this->email->send($message);
     }

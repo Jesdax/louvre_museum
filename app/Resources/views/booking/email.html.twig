@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <img src="{{ logo }}" alt="Logo du musée du Louvre">
+        <h1>Musée du Louvre - Billetterie non-officiel</h1>
+        <div>
+            <p>
+                Votre facture
+            </p>
+        </div>
+        <h3>Commande n°</h3>
+
+        <div>
+            <div>
+                {% for ticket in tickets %}
+                    <table>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Prix du billet</th>
+                        </tr>
+
+                        <tr>
+                            <td>{{ ticket.lastname }}</td>
+                            <td>{{ ticket.firstname }}</td>
+                            <td>{{ ticket.price }}</td>
+                        </tr>
+                    </table>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>    

@@ -92,7 +92,7 @@ class BookingManager
             $this->entityManager->persist($booking);
             $this->entityManager->flush();
 
-            $this->email->sendMail();
+            $this->email->sendMail($booking);
 
         }
 
