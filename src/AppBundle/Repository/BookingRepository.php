@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class BookingRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getNbTicketPerDay($dateOfVisit)
+    {
+        $qb = $this->createQueryBuilder('b')
+            ->innerJoin('b.tickets', 't')
+            ->addSelect('t')
+            ->select('COUNT(t.id)')
+            ->where('b.dateOfVisit = :dateOfVisit')
+            ->setParameter('dateOfVisit', $dateOfVisit);
+
+        return (int) $qb->getQuery()->getSingleScalarResult(); // Cast for result = int
+    }
 }
