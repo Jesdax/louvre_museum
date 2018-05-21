@@ -6,7 +6,7 @@
  * Time: 11:11
  */
 
-namespace AppBundle\Services;
+namespace AppBundle\Service;
 
 
 use AppBundle\Entity\Booking;

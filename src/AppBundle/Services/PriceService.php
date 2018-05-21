@@ -23,25 +23,22 @@ class PriceService
     {
         $price = 0;
 
-        if (!is_bool($reducedPrice) | !is_int($age) | !is_bool($type)) {
-            throw new \InvalidArgumentException('Les arguments son erronés !');
-        }
+        if (!is_bool($reducedPrice) | !is_int($age) | !is_bool($type))
+            throw new \InvalidArgumentException('Les arguments sont erronés !');
+
+        //var_dump($reducedPrice, $age);
 
         if (!$reducedPrice) {
-            switch ($age) {
-                case ($age >= 12 && $age < 60):
-                    $price = self::NORMAL;
-                    break;
-                case ($age >= 60):
-                    $price = self::SENIOR;
-                    break;
-                case ($age >= 4 && $age < 12):
-                    $price = self::CHILD;
-                    break;
-                case ($age < 4):
-                    $price = self::BABY;
-                    break;
-            }
+
+            if ($age < 4)
+                $price = self::BABY;
+            elseif ($age >= 4 && $age < 12)
+                $price = self::CHILD;
+            elseif ($age >= 60)
+                $price = self::SENIOR;
+            else
+                $price = self::NORMAL;
+
         } else {
             $price = self::NORMAL - self::REDUCE;
         }
@@ -49,6 +46,8 @@ class PriceService
         if ($type === false) {
         $price = $price/2;
         }
+
+        // var_dump($price); exit;
 
         return $price;
     }
