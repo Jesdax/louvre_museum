@@ -18,10 +18,19 @@ class TicketType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('lastname', TextType::class, ['label' => 'Nom'])
-            ->add('firstname', TextType::class, ['label' => 'Prénom'])
-            ->add('dateOfBirth', DateType::class, ['label' => 'Date de naissance', 'format' => 'dd-MM-yyyy', 'years' => range(date('Y'), date('Y') - 100)])
-            ->add('country', CountryType::class, ['label' => 'Pays', 'preferred_choices' => 'FR'])
+        $builder->add('lastname', TextType::class, [
+            'label' => 'Nom'])
+
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom'])
+
+            ->add('dateOfBirth', DateType::class, [
+                'label' => 'Date de naissance',
+                'widget' => 'single_text',
+                'years' => range(date('Y'), date('Y') - 100)])
+
+            ->add('country', CountryType::class, ['label' => 'Pays', 'preferred_choices' => ['FR']])
+
             ->add('reducedPrice', CheckboxType::class, ['label'=> 'Tarif réduit', 'required' => false]);
     }/**
      * {@inheritdoc}
@@ -29,7 +38,8 @@ class TicketType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => Ticket::class
+            'data_class' => Ticket::class,
+            'validation_groups' => ['ticketStep']
         ));
     }
 

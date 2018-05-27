@@ -13,9 +13,10 @@ class BookingRepository extends \Doctrine\ORM\EntityRepository
     public function getNbTicketPerDay($dateOfVisit)
     {
         $qb = $this->createQueryBuilder('b')
-            ->innerJoin('b.tickets', 't')
-            ->addSelect('t')
-            ->select('COUNT(t.id)')
+           // ->innerJoin('b.tickets', 't')
+           // ->addSelect('t')
+           // ->select('COUNT(t.id)')
+            ->select('SUM(b.nbTickets)')
             ->where('b.dateOfVisit = :dateOfVisit')
             ->setParameter('dateOfVisit', $dateOfVisit);
 

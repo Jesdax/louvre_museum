@@ -3,12 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as AssertAppli;
 
 /**
  * Booking
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BookingRepository")
+ * @AssertAppli\HalfDay(groups={"bookingStep"})
+ * @AssertAppli\MaxTickets(groups={"bookingStep"})
  */
 class Booking
 {
@@ -30,47 +34,58 @@ class Booking
 
     /**
      * @var bool
-     *
+     * @Assert\Type("bool", groups={"bookingStep"})
      * @ORM\Column(name="type", type="boolean")
      */
     private $type = self::DAY;
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="createAt", type="datetime")
      */
     private $createAt;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dateOfVisit", type="datetime")
+     * @var \DateTime $dateOfVisit
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
+     * @Assert\Date(groups={"bookingStep"})
+     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"})
+     * @AssertAppli\NotPublicHolidays(groups={"bookingStep"})
+     * @AssertAppli\NotTuesday(groups={"bookingStep"})
+     * @AssertAppli\NotSunday(groups={"bookingStep"})
+     * @ORM\Column(name="dateOfVisit", type="date")
      */
     private $dateOfVisit;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
+     * @Assert\Type("integer", groups={"bookingStep"})
      * @ORM\Column(name="nbTickets", type="integer")
      */
     private $nbTickets = 1;
 
     /**
      * @var string
-     *
+     * @Assert\Email(groups={"bookingStep"})
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy="booking", cascade={"persist"})
+     * @Assert\Valid(groups={"ticketStep"})
      */
     private $tickets;
 
     /**
      * @var int
      * @ORM\Column(name="totalPrice", type="integer")
+     * @Assert\Type("integer")
      */
     private $totalPrice;
 

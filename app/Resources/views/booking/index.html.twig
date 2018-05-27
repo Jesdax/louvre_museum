@@ -2,18 +2,45 @@
 
 {% block title %}{{ parent() }} - Accueil & Billetterie {% endblock %}
 
+{% block step %}
+    <h2>Etape 1 :</h2>
+{% endblock %}
+
 {% block body %}
-<main class="container booking">
-    <div class="row">
-        <h3>Bienvenue sur la billetterie non-officiel du musée du Louvre.</h3>
-    </div><br/>
-    <div class="row">
-        <h4>Etape 1 - Réservation des e-billets</h4>
+    <div>
+        <main>
+            {{ form_start(form) }}
+            <div>
+                <h4>Date de visite</h4>
+            </div>
+            {{ form_errors(form) }}
+            {{ form_row(form.dateOfVisit) }}
+
+            <div>
+                <h4>Billet demi-journée / Journée</h4>
+            </div>
+
+            <div>
+                {{ form_row(form.type) }}
+                <p>
+                    "Journée : 9h00 - 18h00" <br>
+                    "Demi-journée : 14h00 - 18h00"
+                </p>
+                {{ form_row(form.nbTickets) }}
+            </div>
+            <div>
+                <h4>Email</h4>
+            </div>
+
+            <div>
+                {{ form_row(form.email.first) }}
+                {{ form_row(form.email.second) }}
+            </div>
+
+            <button type="submit">Valider</button>
+
+            {{ form_end(form) }}
+        </main>
     </div>
-    <div class="row">
-        {{ form_start(form) }}
-        {{ form_end(form) }}
-    </div>
-</main>
 
 {% endblock %}

@@ -78,10 +78,13 @@ class BookingController extends Controller
 
         if ($request->getMethod() === Request::METHOD_POST) {
             if ($bookingManager->payStep($request, $booking)) {
+                $this->addFlash('success', 'Paiement validé');
                 return $this->redirectToRoute('final_summary');
+            } else {
+                $this->addFlash('error', 'Votre paiement \'a pas été validé ou vous n\'avez pas les fonds nécessaires. Veuillez vous rapprocher de votre banque pour plus d\'information');
+                return $this->render('booking/error_payment.html.twig');
             }
         }
-
         return $this->render('booking/summary.html.twig', ['booking' => $booking]);
     }
 

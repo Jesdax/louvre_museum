@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ticket
@@ -23,49 +24,58 @@ class Ticket
 
     /**
      * @var int
-     *
+     * Assert\Type("integer")
      * @ORM\Column(name="price", type="integer")
      */
     private $price;
 
     /**
      * @var int
-     *
+     * Assert\Type("bool", groups={"ticketStep"})
      * @ORM\Column(name="reducedPrice", type="integer")
      */
     private $reducedPrice;
 
     /**
      * @var string
-     *
+     * @Assert\Length(min=2, minMessage="* 2 caractères minimum")
+     * @Assert\NotBlank(groups={"ticketStep"})
+     * @Assert\NotNull(groups={"ticketStep"})
+     * @Assert\Type("string", groups={"ticketStep"})
      * @ORM\Column(name="lastname", type="string", length=255)
      */
     private $lastname;
 
     /**
      * @var string
-     *
+     * @Assert\Length(min=2, minMessage="* 2 caractères minimum")
+     * @Assert\NotBlank(groups={"ticketStep"})
+     * @Assert\NotNull(groups={"ticketStep"})
+     * @Assert\Type("string", groups={"ticketStep"})
      * @ORM\Column(name="firstname", type="string", length=255)
      */
     private $firstname;
 
     /**
      * @var \DateTime
-     *
-     * @ORM\Column(name="dateOfBirth", type="date")
+     * @Assert\NotBlank(message="* format jj/mm/aaa", groups={"ticketStep"})
+     * @Assert\NotNull(groups={"ticketStep"})
+     * @Assert\Date(groups={"ticketStep"})
+     * @Assert\LessThanOrEqual("today", groups={"ticketStep"})
+     * @ORM\Column(name="dateOfBirth", type="datetime")
      */
     private $dateOfBirth;
 
     /**
      * @var int
-     *
+     * @Assert\Type("integer")
      * @ORM\Column(name="age", type="integer")
      */
     private $age;
 
     /**
      * @var string
-     *
+     * @Assert\Country(message="* Veuillez choisir un pays dans la liste déroulante")
      * @ORM\Column(name="country", type="string", length=255)
      */
     private $country;

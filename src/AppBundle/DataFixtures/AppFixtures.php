@@ -19,9 +19,9 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-        $timestamp = rand(strtotime('1970-01-01'), strtotime('2018-03-30'));
+        $timestamp = rand(strtotime('1990-01-01'), strtotime('2018-03-30'));
         $randomDate = date("d.m.Y", $timestamp);
-        $numberTicket = 2;
+        $numberTicket = 1;
         //create 10 booking tickets
 
         $booking = new Booking();
