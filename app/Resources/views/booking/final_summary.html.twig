@@ -1,46 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'booking/summary.html.twig' %}
 
-{% block title %} {{ parent() }} - Résumé de votre commande {% endblock %}
+{% block title %}
+    {{parent()}} - Etape 4
+{% endblock %}
 
-{% block body %}
+{% block step %}
+    <h2 id="step-title">Etape 4</h2>
+{% endblock %}
 
-    <main class="container">
-        {% for message in app.flashes('success') %}
-        <div class="alert-success">
-            {{ message }}
-        </div>
-        {% endfor %}
-        <div>
-            <div>
-                <h2>Récapitulatif de votre commande</h2>
-            </div>
-            <div>
-                <h3>Commande n° </h3>
-            </div>
-            <div>
-                <table>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Prix du billet</th>
-                    </tr>
+{% block summaryTitle %}
+    n° {{ booking.transaction }}
+{% endblock %}
 
-                    {% for ticket in booking.tickets %}
-                        <tr>
-                            <td>{{ ticket.lastname }}</td>
-                            <td>{{ ticket.firstname }}</td>
-                            <td>{{ ticket.price }}</td>
-                        </tr>
-                    {% endfor %}
-
-                    <tr>
-                        <td>Total commande</td>
-                        <td>{{ booking.totalPrice }}</td>
-                    </tr>
-
-
-                </table>
-            </div>
-        </div>
-    </main>
+{% block payment %}
 {% endblock %}

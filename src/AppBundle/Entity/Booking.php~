@@ -3,12 +3,16 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
+use AppBundle\Validator\Constraints as AssertAppli;
 
 /**
  * Booking
  *
  * @ORM\Table(name="booking")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\BookingRepository")
+ * @AssertAppli\HalfDay(groups={"bookingStep"})
+ * @AssertAppli\MaxTickets(groups={"bookingStep"})
  */
 class Booking
 {
@@ -30,49 +34,66 @@ class Booking
 
     /**
      * @var bool
-     *
+     * @Assert\Type("bool", groups={"bookingStep"})
      * @ORM\Column(name="type", type="boolean")
      */
     private $type = self::DAY;
 
     /**
      * @var \DateTime
-     *
      * @ORM\Column(name="createAt", type="datetime")
      */
     private $createAt;
 
     /**
-     * @var \DateTime
-     *
+     * @var \DateTime $dateOfVisit
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
+     * @Assert\Date(groups={"bookingStep"})
+     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"}, message="Cette date doit être supérieur à {{ compared_value }}")
+     * @AssertAppli\NotPublicHolidays(groups={"bookingStep"})
+     * @AssertAppli\NotTuesday(groups={"bookingStep"})
+     * @AssertAppli\NotSunday(groups={"bookingStep"})
      * @ORM\Column(name="dateOfVisit", type="datetime")
      */
     private $dateOfVisit;
 
     /**
      * @var int
-     *
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
+     * @Assert\Type("integer", groups={"bookingStep"})
      * @ORM\Column(name="nbTickets", type="integer")
      */
     private $nbTickets = 1;
 
     /**
      * @var string
-     *
+     * @Assert\Email(groups={"bookingStep"})
+     * @Assert\NotBlank(groups={"bookingStep"})
+     * @Assert\NotNull(groups={"bookingStep"})
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ticket", mappedBy="booking", cascade={"persist"})
+     * @Assert\Valid(groups={"ticketStep"})
      */
     private $tickets;
 
     /**
      * @var int
      * @ORM\Column(name="totalPrice", type="integer")
+     * @Assert\Type("integer")
      */
     private $totalPrice;
+
+    /**
+     * @var string
+     * @ORM\Column(name="transaction", type="string")
+     */
+    private $transaction;
 
     /**
      * Get id
@@ -209,6 +230,7 @@ class Booking
     public function __construct()
     {
         $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->createAt = new \DateTime();
     }
 
     /**
@@ -221,6 +243,7 @@ class Booking
     public function addTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets[] = $ticket;
+        $ticket->setBooking($this);
 
         return $this;
     }
@@ -233,6 +256,7 @@ class Booking
     public function removeTicket(\AppBundle\Entity\Ticket $ticket)
     {
         $this->tickets->removeElement($ticket);
+        $ticket->setBooking(null);
     }
 
     /**
@@ -243,5 +267,29 @@ class Booking
     public function getTickets()
     {
         return $this->tickets;
+    }
+
+    /**
+     * Set totalPrice
+     *
+     * @param integer $totalPrice
+     *
+     * @return Booking
+     */
+    public function setTotalPrice($totalPrice)
+    {
+        $this->totalPrice = $totalPrice;
+
+        return $this;
+    }
+
+    /**
+     * Get totalPrice
+     *
+     * @return integer
+     */
+    public function getTotalPrice()
+    {
+        return $this->totalPrice;
     }
 }

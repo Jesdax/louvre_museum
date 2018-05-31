@@ -1,33 +1,37 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        <img src="{{ logo }}" alt="Logo du musée du Louvre">
-        <h1>Musée du Louvre - Billetterie non-officiel</h1>
-        <div>
-            <p>
-                Votre facture
-            </p>
-        </div>
-        <h3>Commande n°</h3>
 
-        <div>
-            <div>
-                {% for ticket in tickets %}
-                    <table>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Prénom</th>
-                            <th>Prix du billet</th>
-                        </tr>
+<body>
+<img src="{{ logo }}" alt="logo du Louvre">
+<h2>Billetterie du Louvre</h2>
 
-                        <tr>
-                            <td>{{ ticket.lastname }}</td>
-                            <td>{{ ticket.firstname }}</td>
-                            <td>{{ ticket.price }}</td>
-                        </tr>
-                    </table>
-                {% endfor %}
-            </div>
-        </div>
-    </body>
-</html>    
+<h3> Récapitulatif de la commande n° {{ booking.transaction }}</h3>
+
+<div>
+    <p><strong>Prix total de la commande</strong> : {{ booking.totalPrice }} €</p>
+    <p><strong>Type de billet</strong> : {{ booking.type }}</p>
+</div>
+
+<div>
+    <div>
+        {% for ticket in tickets %}
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Prix unitaire</th>
+                </tr>
+
+                <tr>
+                    <td>{{ ticket.firstname }}</td>
+                    <td>{{ ticket.lastname }}</td>
+                    <td>{{ ticket.price }}</td>
+                </tr>
+            </table>
+        {%  endfor %}
+    </div>
+
+</div>
+{% block stylesheets %}{% endblock %}
+</body>
+</html>

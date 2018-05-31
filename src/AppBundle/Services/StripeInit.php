@@ -36,7 +36,7 @@ class StripeInit
                 'source' => $token
             ]);
 
-            return $charge;
+            return $charge['id'];
         } catch (Card $e) {
             return false;
         }

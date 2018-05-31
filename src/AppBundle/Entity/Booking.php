@@ -50,11 +50,11 @@ class Booking
      * @Assert\NotBlank(groups={"bookingStep"})
      * @Assert\NotNull(groups={"bookingStep"})
      * @Assert\Date(groups={"bookingStep"})
-     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"})
+     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"}, message="Cette date doit être supérieur à {{ compared_value }}")
      * @AssertAppli\NotPublicHolidays(groups={"bookingStep"})
      * @AssertAppli\NotTuesday(groups={"bookingStep"})
      * @AssertAppli\NotSunday(groups={"bookingStep"})
-     * @ORM\Column(name="dateOfVisit", type="date")
+     * @ORM\Column(name="dateOfVisit", type="datetime")
      */
     private $dateOfVisit;
 
@@ -88,6 +88,12 @@ class Booking
      * @Assert\Type("integer")
      */
     private $totalPrice;
+
+    /**
+     * @var string
+     * @ORM\Column(name="transaction", type="string")
+     */
+    private $transaction;
 
     /**
      * Get id
@@ -285,5 +291,29 @@ class Booking
     public function getTotalPrice()
     {
         return $this->totalPrice;
+    }
+
+    /**
+     * Set transaction
+     *
+     * @param string $transaction
+     *
+     * @return Booking
+     */
+    public function setTransaction($transaction)
+    {
+        $this->transaction = $transaction;
+
+        return $this;
+    }
+
+    /**
+     * Get transaction
+     *
+     * @return string
+     */
+    public function getTransaction()
+    {
+        return $this->transaction;
     }
 }

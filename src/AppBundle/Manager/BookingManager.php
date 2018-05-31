@@ -89,6 +89,7 @@ class BookingManager
         $transaction = $this->stripeInit->payment($booking, $request->request->get('stripeToken'));
 
         if ($transaction !== false) {
+            $booking->setTransaction($transaction);
             $this->entityManager->persist($booking);
             $this->entityManager->flush();
 
