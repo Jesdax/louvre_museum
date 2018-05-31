@@ -1,66 +1,153 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
+        <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>{% block title %}Musée du Louvre{% endblock %}</title>
-        {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('public/css/testDev.css') }}">
-            <!-- CDN Bootstrap for prod -->
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-            <!-- Bootstrap for dev -->
-            <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}">
-        {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('public/ico/favicon.ico') }}"/>
+        <title>{% block title %} Billetterie du Louvre {% endblock %}</title>
+
+        <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('public/css/style.css') }}" />
+        <link rel="icon" href="{{ asset('public/css/fontawesome-all.min.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('public/ico/favicon.ico') }}" />
+        <script src="{{ asset('public/js/main.js') }}"></script>
     </head>
-
     <body>
-    <div class="bodyTest">
-    <!-- Main navigation -->
-        {% block navigation %}
-    <nav class="container-fluid navbar red" role="navigation">
-        <div>
-            <a href="{{ path('accueil') }}"><img src="{{ asset('public/images/logo-louvre.jpg') }}" alt="Logo du site de la billetterie non officiel du Louvre"></a>
-        </div>
-        <ul>
-            <li>
-                <ul class="langague">
-                    <li><a href="#">Anglais</a></li>
-                    <li><a href="#">Français</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-        {% endblock %}
+        <header>
+            <div class="container">
+                <div class="row justify-content-end" id="nav-style">
+                    {% block navigation %}
+                        <nav class="navbar navbar-dark navbar-expand-md navbar-fixed-top" role="navigation">
 
-    <!-- Body content -->
-        {% block body %}
-        {% endblock %}
+                            <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-    <!-- Footer -->
-        {% block footer %}
-    <footer class="footer">
-        <div>
-            <div>
-                logo carte
+                            <div class="collapse navbar-collapse" id="navbarToggler">
+                                <ul class="navbar-bar">
+                                    <li class="dropdown">
+                                        <a class="nav-link dropdown-toggle" id="dropdown-menu-link" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Langue</a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdowm-menu-link">
+                                            <a class="dropdown-item" href="#">Anglais</a>
+                                            <a class="dropdown-item" href="#">Français</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    {% endblock %}
+                </div>
+
+                <div class="row" id="header-band">
+                    <div class="col-sm-4">
+                        <a href="{{ path('accueil') }}" class="nav-link"><img src="{{ asset('public/images/logo-louvre.jpg') }}" alt="Logo du musée du Louvre"></a>
+                    </div>
+                    <div class="col-sm-8">
+                        <h1 id="main-title">Billetterie - Musée du Louvre</h1>
+                    </div>
+                </div>
+                {% block headerImg %}
+                    <div class="row align-middle" id="louvre">
+                        <img  src="{{ asset('public/images/main-structure001.jpg') }}" class="img-fluid" alt="Le louvre en soirée">
+                    </div>
+                {% endblock %}
             </div>
-            <div>
-                <a href="#">Site Officiel</a>
-                <a href="#">CGV</a>
-                <a href="#">Mentions légales</a>
-                <a href="#">Contact us</a>
-            </div>
-        </div>
-    </footer>
-        {% endblock %}
-    </div>
-    <!-- Js scripts -->
-        {% block javascripts %}
-    <!-- CDN js -->
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <!-- Js for dev -->
-            <script src="{{ asset('public/js/bootstrap.js') }}"></script>
-        {% endblock %}
+        </header>
 
+        {% block sucess_msg %}
+            {% for message in app.session.flashbag.get('success') %}
+                <div class="container" id="success">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        {% if message is iterable %}
+                            {{ message.id(message.parameters|default({})) }}
+                        {% else %}
+                            {{ message }}
+                        {% endif %}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endblock %}
+        <div class="container">
+            <div class="row step">
+                {% block body %}
+                {% endblock %}
+
+                {% block infos %}
+                    <div class="col-md-4 col-sm-12 infos">
+                        <div>
+                            <h4>Informations pratiques</h4>
+                            <h5>Horaires</h5>
+                            <p>Ouvert tous les jours de 9h à 18h sauf le mardi
+                                Nocturnes jusqu’à 21h45 le mercredi et le vendredi</p>
+
+                            <h5>Fermetures du musée</h5>
+                            <p>Les 1er janvier, 1er mai, 8 mai et 25 décembre</p>
+                        </div>
+
+                        <div>
+                            <h4>Tarifications</h4>
+                            <ul>
+                                <li>Tarif normal, à partir de 12 ans : 16€ </li>
+                                <li>Tarif enfant, de 4 à 12 ans : 8€ </li>
+                                <li>Tarif senior, dès de 60 ans : 12€ </li>
+                                <li>Entrée est gratuite pour les enfants moins de 4 ans </li>
+                                <li>Tarif réduit * : 10€ </li>
+                            </ul>
+                            <p>* Le tarif réduit est accordé dans certaines conditions : étudiants, employé du musée, militaire, service du Ministère de la culture... Veuillez présenté une pièce justificatif à l'entrée.</p>
+                        </div>
+                    </div>
+                {% endblock %}
+            </div>
+
+            {% block return %}
+                <div class="row footer_first_part">
+                    <a class="mx-auto" href="{{ path('accueil') }}"><button class="btn" id="btn-return">Retourner à la page d'accueil</button></a>
+                </div>
+            {% endblock %}
+        </div>
+
+        <footer class=" container footer">
+            <div class="row" id="footer_first_part">
+                <div class="col-12 align-middle align-self-center">
+                    <img src="{{ asset('public/icones/mastercard.png') }}" alt="mastercard logo">
+                    <img src="{{ asset('public/icones/visa.png') }}" alt="visa logo">
+                    <img src="{{ asset('public/icones/americainXpress.png') }}" alt="american express logo">
+                </div>
+            </div>
+
+            <div class="row" id="footer_second_part">
+                <div class="col-4 align-middle align-self-center">
+                    <p><a href="#">Informations pratiques</a></p>
+                </div>
+
+                <div class="col-4 align-middle align-self-center social-icons">
+                    <a href="https://www.facebook.com/museedulouvre"><img src="{{ asset('public/icones/fb.png') }}" alt="facebook"></a>
+                    <img src="{{ asset('public/icones/insta.png') }}" alt="instagram">
+                    <a href="https://twitter.com/museelouvre"><img src="{{ asset('public/icones/twitter.png') }}" alt="twitter"></a>
+                </div>
+
+
+                <div class="col-4 align-middle align-self-center">
+                    <div><a href="#">Mentions légales</a></div>
+                    <div><a href="#">Conditions générale de vente</a></div>
+                </div>
+            </div>
+            <hr/>
+
+            <div class="row" id="footer_final">
+                <div class="col-lg-12 align-middle align-self-center" >
+                    <p>&copy; Synergia - 2018</p>
+                </div>
+            </div>
+
+        </footer>
+
+
+    {% block js %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="{{ asset('public/js/bootstrap.bundle.min.js') }}"></script>
+    {% endblock %}
     </body>
 </html>

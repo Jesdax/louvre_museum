@@ -1,44 +1,39 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'form/fields.html.twig' %}
 
 {% block title %}{{ parent() }} - Accueil & Billetterie {% endblock %}
 
-{% block step %}
-    <h2>Etape 1 :</h2>
-{% endblock %}
 
 {% block body %}
-    <div>
+    <div class="col-md-8 col-sm-12 form-style">
         <main>
             {{ form_start(form) }}
-            <div>
+            <div class="row form-style-title">
                 <h4>Date de visite</h4>
             </div>
-            {{ form_errors(form) }}
-            {{ form_row(form.dateOfVisit) }}
+            <div class="form-block">
+                {{ form_errors(form) }}
+                {{ form_row(form.dateOfVisit) }}
+            </div>
 
-            <div>
+            <div class="row form-style-title">
                 <h4>Billet demi-journée / Journée</h4>
             </div>
 
-            <div>
+            <div class="form-block">
                 {{ form_row(form.type) }}
-                <p>
-                    "Journée : 9h00 - 18h00" <br>
-                    "Demi-journée : 14h00 - 18h00"
-                </p>
                 {{ form_row(form.nbTickets) }}
             </div>
-            <div>
+            <div class="row form-style-title">
                 <h4>Email</h4>
             </div>
 
-            <div>
+            <div class="form-block">
                 {{ form_row(form.email.first) }}
                 {{ form_row(form.email.second) }}
             </div>
 
-            <button type="submit">Valider</button>
-
+            <button class="btn mx-auto" type="submit" name="index_validation">Valider</button>
             {{ form_end(form) }}
         </main>
     </div>

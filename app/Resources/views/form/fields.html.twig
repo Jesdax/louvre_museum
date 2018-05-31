@@ -1,0 +1,13 @@
+{% block email_widget %}
+    <div class="email_widget">
+        {% set type = type|default('email') %}
+        {{ block('form_widget_simple') }}
+    </div>
+{% endblock %}
+
+{% block text_widget %}
+    <div class="text_widget">
+        {% set type = type|default('text') %}
+        {{ block('form_widget_simple') }}
+    </div>
+{% endblock %}

@@ -11,12 +11,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 use Symfony\Component\Routing\Annotation\Route;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class BookingController extends Controller
 {
 
     /**
+     *
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -42,6 +43,7 @@ class BookingController extends Controller
 
 
     /**
+     *
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -52,10 +54,10 @@ class BookingController extends Controller
         $booking = $request->getSession()->get('booking');
         $bookingManager->bookingComplete($booking);
 
-        $formTicket = $this->createForm(TicketsType::class, $booking);
-        $formTicket->handleRequest($request);
+        $form = $this->createForm(TicketsType::class, $booking);
+        $form->handleRequest($request);
 
-        if ($formTicket->isSubmitted() && $formTicket->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $bookingManager->getPriceOfTicket($booking);
             $bookingManager->setBookingSession($booking);
 
@@ -63,10 +65,11 @@ class BookingController extends Controller
 
             return $this->redirectToRoute('summary');
         }
-        return $this->render('booking/ticket.html.twig', ['form' => $formTicket->createView()]);
+        return $this->render('booking/ticket.html.twig', ['form' => $form->createView()]);
     }
 
     /**
+     *
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -78,17 +81,18 @@ class BookingController extends Controller
 
         if ($request->getMethod() === Request::METHOD_POST) {
             if ($bookingManager->payStep($request, $booking)) {
-                $this->addFlash('success', 'Paiement validé');
+                $this->addFlash('success',
+                    'Le paiement a bien été effectué ! Un mail de confirmation vous a été envoyé.');
                 return $this->redirectToRoute('final_summary');
             } else {
-                $this->addFlash('error', 'Votre paiement \'a pas été validé ou vous n\'avez pas les fonds nécessaires. Veuillez vous rapprocher de votre banque pour plus d\'information');
-                return $this->render('booking/error_payment.html.twig');
+                $this->addFlash('error', 'Il y a eu un petit soucis lors du paiement et il n\'a pas été pris en compte ! Merci de réessayer ou contactez votre banque pour plus d\'information.');
             }
         }
         return $this->render('booking/summary.html.twig', ['booking' => $booking]);
     }
 
     /**
+     *
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/final_summary", name="final_summary")

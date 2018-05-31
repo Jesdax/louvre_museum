@@ -3,48 +3,56 @@
 {% block title %}{{ parent() }} - Résumé {% endblock %}
 
 {% block body %}
-    <main class="container">
-        <div class="">
-            <div>
-                <h2>Récapitulatif de la commande</h2>
+    <div class="col-md-8 col-sm-12 form-style">
+        <main>
+            <div class="row form-style-title" >
+                <h4>Résumé de la commande{% block summaryTitle %}{% endblock %}</h4>
             </div>
-        </div>
-        <div class="table">
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Prix du billet</th>
-                </tr>
 
+            <table class="table table-striped table-responsive justify-content-center">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prénom</th>
+                    <th scope="col">Type de billet</th>
+                    <th scope="col">Tarif réduit</th>
+                    <th scope="col">Prix unitaire - €</th>
+                </tr>
+                </thead>
+
+                <tbody>
                 {% for ticket in booking.tickets %}
                     <tr>
-                        <td>{{ ticket.lastname }}</td>
+                        <th scope="row">{{ loop.index }}</th>
                         <td>{{ ticket.firstname }}</td>
+                        <td>{{ ticket.lastname }}</td>
+                        <td>
+                            {{ ((booking.type)?'Journée' : 'Demi-journée') }}
+                        </td>
+                        <td>{{ (ticket.reducedPrice)? 'oui' : 'non' }}</td>
                         <td>{{ ticket.price }}</td>
                     </tr>
-                {% endfor %}
-
-                <tr>
-                    <td>Total commande</td>
-                    <td>{{ booking.totalPrice }}</td>
-                </tr>
-
+                {%  endfor %}
+                </tbody>
             </table>
+            <div class="row price">
+                <p>Prix total : {{ booking.totalPrice }} € </p>
+            </div>
 
-            <form action="{{ path('summary') }}" method="POST">
-                <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="{{ stripe_public_key }}"
-                        data-amount="{{ booking.totalPrice * 100}}"
-                        data-description="Paiement - Billetterie du Louvre"
-                        data-locale="auto"
-                        data-currency="eur"
-                        data-email="{{ booking.email }}">
-                </script>
-            </form>
-
-        </div>
-    </main>
-
+            {% block payment %}
+                <form action="{{ path('summary') }}" method="POST">
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="{{ stripe_public_key }}"
+                            data-description="Billetterie du musée du Louvre - Paiement"
+                            data-amount="{{ booking.totalPrice * 100}}"
+                            data-locale="auto"
+                            data-currency='eur'
+                            data-label="Je procèdes au paiement"
+                            data-email='{{ booking.email }}'>
+                    </script>
+                </form>
+            {% endblock %}
+        </main>
+    </div>
 {% endblock %}
