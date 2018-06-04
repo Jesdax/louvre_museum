@@ -34,7 +34,7 @@ class PriceTest extends TestCase
     public function dataPrice()
     {
         return array(
-            [PriceTest::DAY, 27, PriceTest::DISCOUNT, 6],
+            [PriceTest::DAY, 27, PriceTest::DISCOUNT, 10],
             [PriceTest::HALF_DAY, 27, PriceTest::NOT_DISCOUNT, 8],
             [PriceTest::DAY, 4, PriceTest::NOT_DISCOUNT, 8],
             [PriceTest::HALF_DAY, 4, PriceTest::DISCOUNT, 4],

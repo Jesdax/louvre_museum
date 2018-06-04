@@ -29,7 +29,7 @@ class PriceService
         //var_dump($reducedPrice, $age);
 
         if($reducedPrice && $age >= 12) {
-            $price = self::NORMAL - self::REDUCE;
+            $price = self::REDUCE;
         } else {
             if ($age < 4)
                 $price = self::BABY;
