@@ -28,8 +28,9 @@ class PriceService
 
         //var_dump($reducedPrice, $age);
 
-        if (!$reducedPrice) {
-
+        if($reducedPrice && $age >= 12) {
+            $price = self::NORMAL - self::REDUCE;
+        } else {
             if ($age < 4)
                 $price = self::BABY;
             elseif ($age >= 4 && $age < 12)
@@ -38,10 +39,8 @@ class PriceService
                 $price = self::SENIOR;
             else
                 $price = self::NORMAL;
-
-        } else {
-            $price = self::NORMAL - self::REDUCE;
         }
+
         // Price for half-day
         if ($type === false) {
         $price = $price/2;
