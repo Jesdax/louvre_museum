@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2f94a5cf-3b91-4ca8-8e2f-23366812b0e6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/email.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/PriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/PriceService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/AppBundle/PriceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/PriceTest.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,7 +19,7 @@
       <file leaf-file-name="email.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/email.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="615">
               <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -353,12 +350,12 @@
       <workItem from="1528021469942" duration="34698000" />
       <workItem from="1528107195239" duration="12849000" />
       <workItem from="1528128439569" duration="6175000" />
-      <workItem from="1528135791169" duration="7625000" />
+      <workItem from="1528135791169" duration="8705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="257205000" />
+    <option name="totallyTimeSpent" value="258285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="25" width="1853" height="1055" extended-state="6" />
@@ -368,7 +365,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27982163" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.4715719" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.12064195" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -737,7 +734,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/email.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
+        <state relative-caret-position="615">
           <caret line="41" column="57" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
