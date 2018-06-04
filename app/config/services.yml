@@ -37,3 +37,8 @@ services:
     AppBundle\Services\StripeInit:
         arguments:
             $secretKey: '%stripe_private_key%'
+
+    twig.extension.intl:
+            class: Twig_Extensions_Extension_Intl
+            tags:
+                - { name: twig.extension }

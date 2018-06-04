@@ -6,18 +6,19 @@
     <div class="col-md-8 col-sm-12 form-style">
         <main>
             <div class="row form-style-title" >
-                <h4>Résumé de la commande{% block summaryTitle %}{% endblock %}</h4>
+                <h4>{{ 'booking.summary'|trans }}{% block summaryTitle %}{% endblock %}</h4>
             </div>
 
             <table class="table table-striped table-responsive justify-content-center">
                 <thead>
                 <tr>
                     <th></th>
-                    <th scope="col">Nom</th>
-                    <th scope="col">Prénom</th>
-                    <th scope="col">Type de billet</th>
-                    <th scope="col">Tarif réduit</th>
-                    <th scope="col">Prix unitaire - €</th>
+                    <th scope="col">{{ 'booking.dateOfVisit'|trans }}</th>
+                    <th scope="col">{{ 'ticket.lastname'|trans }}</th>
+                    <th scope="col">{{ 'ticket.firstname'|trans }}</th>
+                    <th scope="col">{{ 'booking.type'|trans }}</th>
+                    <th scope="col">{{ 'ticket.reduce_rate'|trans }}</th>
+                    <th scope="col">{{ 'ticket.unit_price'|trans }}</th>
                 </tr>
                 </thead>
 
@@ -25,30 +26,29 @@
                 {% for ticket in booking.tickets %}
                     <tr>
                         <th scope="row">{{ loop.index }}</th>
+                        <td>{{ booking.dateOfVisit|localizeddate('short', 'none') }}</td>
                         <td>{{ ticket.firstname }}</td>
                         <td>{{ ticket.lastname }}</td>
-                        <td>
-                            {{ ((booking.type)?'Journée' : 'Demi-journée') }}
-                        </td>
-                        <td>{{ (ticket.reducedPrice)? 'oui' : 'non' }}</td>
+                        <td>{{ ((booking.type)?'booking.day' : 'booking.half_day')|trans }}</td>
+                        <td>{{ ((ticket.reducedPrice)? 'summary_yes' : 'summary_no')|trans }}</td>
                         <td>{{ ticket.price }}</td>
                     </tr>
                 {%  endfor %}
                 </tbody>
             </table>
             <div class="row price">
-                <p>Prix total : {{ booking.totalPrice }} € </p>
+                <p>{{ 'booking.total_price'|trans }} : {{ booking.totalPrice }} € </p>
             </div>
 
             {% block payment %}
                 <form action="{{ path('summary') }}" method="POST">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="{{ stripe_public_key }}"
-                            data-description="Billetterie du musée du Louvre - Paiement"
+                            data-description="{{ 'payment.stripe_title'|trans }}"
                             data-amount="{{ booking.totalPrice * 100}}"
                             data-locale="auto"
                             data-currency='eur'
-                            data-label="Je procèdes au paiement"
+                            data-label="{{ 'payment.stripe_label'|trans }}"
                             data-email='{{ booking.email }}'>
                     </script>
                 </form>

@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
+    <body>
+        <img src="{{ logo }}" alt="logo du Louvre">
+        <h2>{{ 'head.main_title'|trans }}</h2>
 
-<body>
-<img src="{{ logo }}" alt="logo du Louvre">
-<h2>Billetterie du Louvre</h2>
+        <h3> {{ 'summary'|trans({ '%transaction%': booking.transaction }) }} {{ booking.dateOfVisit|localizeddate('medium', 'none') }}</h3>
 
-<h3> Récapitulatif de la commande n° {{ booking.transaction }}</h3>
+        <div>
+            <p><strong>{{ 'mail.booking.total_price'|trans }}</strong> : {{ booking.totalPrice }} €</p>
+            <p><strong>{{ 'booking.type'|trans }}</strong> : {{ booking.type }}</p>
+        </div>
 
-<div>
-    <p><strong>Prix total de la commande</strong> : {{ booking.totalPrice }} €</p>
-    <p><strong>Type de billet</strong> : {{ booking.type }}</p>
-</div>
+        <div>
+            <div>
+                {% for ticket in tickets %}
+                    <table>
+                        <tr>
+                            <th scope="col">{{ 'ticket.lastname'|trans }}</th>
+                            <th scope="col">{{ 'ticket.firstname'|trans }}</th>
+                            <th scope="col">{{ 'ticket.unit_price'|trans }}</th>
+                        </tr>
 
-<div>
-    <div>
-        {% for ticket in tickets %}
-            <table>
-                <tr>
-                    <th>Nom</th>
-                    <th>Prénom</th>
-                    <th>Prix unitaire</th>
-                </tr>
-
-                <tr>
-                    <td>{{ ticket.firstname }}</td>
-                    <td>{{ ticket.lastname }}</td>
-                    <td>{{ ticket.price }}</td>
-                </tr>
-            </table>
-        {%  endfor %}
-    </div>
-</div>
-{% block stylesheets %}{% endblock %}
-</body>
+                        <tr>
+                            <td>{{ ticket.lastname }}</td>
+                            <td>{{ ticket.firstname }}</td>
+                            <td>{{ ticket.price }}</td>
+                        </tr>
+                    </table>
+                {%  endfor %}
+            </div>
+        </div>
+    </body>
 </html>

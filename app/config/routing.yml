@@ -3,7 +3,7 @@ app:
     type: annotation
     prefix: /{_locale}
     requirements:
-        _locale: %trad%
+        _locale: %locales%
 
 root:
     path: /

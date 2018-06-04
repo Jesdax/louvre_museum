@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 {% form_theme form 'form/fields.html.twig' %}
 
-{% block title %}{{ parent() }} - Accueil & Billetterie {% endblock %}
+{% block title %}{{ parent() }} - {{ 'step_title'|trans }} {% endblock %}
 
 
 {% block body %}
@@ -9,15 +9,16 @@
         <main>
             {{ form_start(form) }}
             <div class="row form-style-title">
-                <h4>Date de visite</h4>
+                <h4>{{ 'booking.dateOfVisit'|trans }}</h4>
             </div>
             <div class="form-block">
                 {{ form_errors(form) }}
                 {{ form_row(form.dateOfVisit) }}
             </div>
 
+
             <div class="row form-style-title">
-                <h4>Billet demi-journée / Journée</h4>
+                <h4>{{ 'tickets'|trans }}</h4>
             </div>
 
             <div class="form-block">
@@ -25,7 +26,7 @@
                 {{ form_row(form.nbTickets) }}
             </div>
             <div class="row form-style-title">
-                <h4>Email</h4>
+                <h4>{{ 'email'|trans }}</h4>
             </div>
 
             <div class="form-block">
@@ -33,7 +34,7 @@
                 {{ form_row(form.email.second) }}
             </div>
 
-            <button class="btn mx-auto" type="submit" name="index_validation">Valider</button>
+            <button class="btn mx-auto" type="submit" name="index_validation">{{ 'submit.button'|trans }}</button>
             {{ form_end(form) }}
         </main>
     </div>

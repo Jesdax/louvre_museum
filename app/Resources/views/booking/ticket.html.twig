@@ -6,7 +6,7 @@
     <div class="col-md-8 col-sm-12 form-style">
         <main>
             <div class="row form-style-title" >
-                <h4>Billets</h4>
+                <h4>{{ 'tickets'|trans }}</h4>
             </div>
 
             {{ form_start(form) }}
@@ -14,7 +14,7 @@
 
                 <div class="form-block">
                     <div class="ticket-title">
-                        Billet n°{{ loop.index }}
+                        {{ 'ticket.unit'|trans }} n°{{ loop.index }}
                     </div>
                     {{ form_row(ticket.lastname, {'attr': {'class': 'input-style'}}) }}
                     {{ form_row(ticket.firstname, {'attr': {'class': 'input-style'}}) }}
@@ -23,7 +23,7 @@
                     {{ form_row(ticket.reducedPrice, {'attr': {'class': 'checkbox-style'}}) }}
                 </div>
             {% endfor %}
-            <button class="btn mx-auto" type="submit" name="ticket_validation">Valider</button>
+            <button class="btn mx-auto" type="submit" name="ticket_validation">{{ 'submit.button'|trans }}</button>
             {{ form_end(form) }}
         </main>
     </div>

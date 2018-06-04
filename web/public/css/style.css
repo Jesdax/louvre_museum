@@ -21,6 +21,14 @@ body {
     width: 20%;
 }
 
+.btn-newsletter {
+    border-color: #E0E0E0;
+    border-width: 2px;
+    margin-bottom: 25px;
+    display: block;
+    width: auto;
+}
+
 #btn-return {
     width: auto;
 }
@@ -40,8 +48,8 @@ body {
 /* ---- Navigation ---- */
 
 #nav-style {
-    background-color: #222222;
-    padding-bottom: 5px;
+    background-color: #000000;
+    padding-bottom: 0;
 
 }
 
@@ -59,10 +67,11 @@ nav a {
 
 .nav-link {
     text-align: center;
+    color: #FFFFFF !important;
 }
 
 
-.navbar-dark, .nav-link {
+.navbar-dark {
     color: #FFFFFF !important;
 }
 
@@ -71,12 +80,12 @@ nav a {
 }
 
 .dropdowm-menu-link {
-    background-color: #C82D00;
+    background-color: #ffffff;
     padding-bottom: 0;
 }
 
 a:hover #dropdown-menu-link {
-    background-color: #FF511E !important;
+    background-color: #ffffff !important;
     text-decoration: none !important;
 }
 
@@ -88,7 +97,7 @@ a:hover #dropdown-menu-link {
 /* ---- Header ---- */
 
 #header-band {
-    background-color: #4e4e4e;
+    background-color: #000000;
 }
 
 header .col-sm-4, header .col-sm-12 {
@@ -138,7 +147,7 @@ header .col-sm-4, header .col-sm-12 {
 }
 
 .form-style-title {
-    background-color: #c8892b;
+    background-color: #000000;
     color: #ffffff;
     padding-top: 15px;
     padding-left: 15px;
@@ -182,11 +191,12 @@ table {
 }
 
 .table {
-    background-color: #ffffff;
-    border: 3px #000000 solid;
+    background-color: #f3f3f3;
+    border: 3px #E0E0E0 solid;
     border-radius: 5px;
-    color: #000000;
-    margin:  1px 5px 5px 1px ;
+    color: #4e4e4e;
+    margin:  1px 15px 25px 5px ;
+    padding: 15px;
 }
 
 .table-responsive {
@@ -197,7 +207,7 @@ table {
 /* ---- Step ---- */
 
 .step {
-    background-color: #ffffff;
+    background-color: transparent;
     color: #FFFFFF;
 }
 
@@ -210,7 +220,7 @@ table {
 /* ---- Infos ---- */
 
 .infos {
-    background-color: #b4b4b4;
+    background-color: #ffffff;
     font-size: 0.75em;
     color: #000000;
 }
@@ -225,8 +235,12 @@ table {
 
 /* ---- footer ---- */
 
+footer {
+    text-align: center;
+}
+
 footer a {
-    color: #909090;
+    color: #dbffe5;
 }
 
 footer a:hover {
@@ -240,7 +254,7 @@ footer hr{
 }
 
 .footer{
-    background-color: #222222;
+    background-color: #000000;
 }
 
 #footer_first_part {
@@ -250,7 +264,7 @@ footer hr{
 
 .footer_first_part {
     padding-top: 10px;
-    background-color: #4e4e4e;
+    background-color: #b4b4b4;
     min-height: 50px;
 }
 
@@ -259,6 +273,43 @@ footer hr{
 }
 
 #footer_final {
-    color: #909090;
+    color: #ffffff;
     max-height: 30px;
+}
+
+#span-footer {
+    color: #909090;
+}
+
+#visa {
+    background-color: #b6b6b6;
+}
+
+/* ---- General ---- */
+
+.cgv {
+    list-style: none;
+    font-size: large;
+    font-weight: 600;
+}
+
+.cgv a{
+    color: #4e4e4e;
+}
+
+.cgv-subtitle{
+    background-color: #222222;
+    color: #ffffff;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+.alert-warning{
+    margin:  15px 15px 25px 15px ;
+    border-width: 3px;
+}
+
+.error {
+
 }

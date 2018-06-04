@@ -1,11 +1,7 @@
 {% extends 'booking/summary.html.twig' %}
 
 {% block title %}
-    {{parent()}} - Etape 4
-{% endblock %}
-
-{% block step %}
-    <h2 id="step-title">Etape 4</h2>
+    {{parent()}} - {{ 'step_title'|trans }}
 {% endblock %}
 
 {% block summaryTitle %}

@@ -31,12 +31,13 @@ class AppFixtures extends Fixture
         $booking->setEmail('test@mail.fr');
         $booking->setTotalPrice(16);
         $booking->setType(Booking::DAY);
+        $booking->setTransaction('transactionTest01');
 
         for ($i = 0; $i < $numberTicket; $i++) {
             $ticket = new Ticket();
             $ticket->setLastname('Kavera'.$i);
             $ticket->setFirstname('August'.$i);
-            $ticket->setCountry('France');
+            $ticket->setCountry('FR');
             $ticket->setDateOfBirth(new \DateTime($randomDate));
             $ticket->setPrice(16);
             $ticket->setReducedPrice(false);

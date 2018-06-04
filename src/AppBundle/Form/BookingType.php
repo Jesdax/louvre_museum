@@ -19,24 +19,24 @@ class BookingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('type', ChoiceType::class, [
-                'label' => 'Type de billet',
+                'label' => 'booking.type',
                 'choices' => [
-                    'Journée' => Booking::DAY,
-                    'Demi-journée' => Booking::HALF_DAY]])
+                    'booking.day' => Booking::DAY,
+                    'booking.half_day' => Booking::HALF_DAY]])
 
                 ->add('dateOfVisit', DateType::class, [
-                    'label' => 'Date de réservation',
+                    'label' => 'booking.dateOfVisit',
                     'widget' => 'single_text'])
 
                 ->add('nbTickets', ChoiceType::class, [
-                    'label' => 'Nombre de billets',
+                    'label' => 'booking.nbTickets',
                     'choices' => array_combine(range(Booking::NB_TICKET_MINIMUM, Booking::NB_TICKET_MAXIMUM), range(Booking::NB_TICKET_MINIMUM, Booking::NB_TICKET_MAXIMUM))])
                 ->add('email', RepeatedType::class, [
                     'type' => EmailType::class,
-                    'invalid_message' => 'Les deux adresses mail ne correspond pas',
+                    'invalid_message' => 'booking.email_error',
                     'required' => true,
-                    'first_options' => ['label' => 'Adresse mail'],
-                    'second_options' => ['label' => 'Veuillez saisir à nouveau votre adresse mail']]);
+                    'first_options' => ['label' => 'booking.email'],
+                    'second_options' => ['label' => 'booking.repeat_mail']]);
     }/**
      * {@inheritdoc}
      */
