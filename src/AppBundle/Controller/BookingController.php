@@ -17,7 +17,7 @@ class BookingController extends Controller
 {
 
     /**
-     *
+     * @Method({"GET","POST"})
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -43,7 +43,7 @@ class BookingController extends Controller
 
 
     /**
-     *
+     * @Method({"GET","POST"})
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -69,7 +69,7 @@ class BookingController extends Controller
     }
 
     /**
-     *
+     * @Method({"GET","POST"})
      * @param Request $request
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
@@ -81,18 +81,20 @@ class BookingController extends Controller
 
         if ($request->getMethod() === Request::METHOD_POST) {
             if ($bookingManager->payStep($request, $booking)) {
-                $this->addFlash('success',
-                    'Le paiement a bien été effectué ! Un mail de confirmation vous a été envoyé.');
+                $this->addFlash('success', [
+                    'id' => 'payment_message.success',
+                    'parameters' => ['%email%' => $booking->getEmail()]
+                ]);
                 return $this->redirectToRoute('final_summary');
             } else {
-                $this->addFlash('error', 'Il y a eu un petit soucis lors du paiement et il n\'a pas été pris en compte ! Merci de réessayer ou contactez votre banque pour plus d\'information.');
+                $this->addFlash('error', 'payment.message.error');
             }
         }
         return $this->render('booking/summary.html.twig', ['booking' => $booking]);
     }
 
     /**
-     *
+     * @Method({"GET","POST"})
      * @param BookingManager $bookingManager
      * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/final_summary", name="final_summary")

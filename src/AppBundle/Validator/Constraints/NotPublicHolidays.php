@@ -18,6 +18,6 @@ use Symfony\Component\Validator\Constraint;
  */
 class NotPublicHolidays extends Constraint
 {
-    public $message = 'La réservation n\'est pas disponible les jours fériés';
+    public $message = 'validator.not_public_holidays';
 
 }

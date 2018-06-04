@@ -18,6 +18,6 @@ use Symfony\Component\Validator\Constraint;
  */
 class NotTuesday extends Constraint
 {
-    public $message = 'La réservation n\'est pas disponible le mardi';
+    public $message = 'validator.not_tuesday';
 
 }

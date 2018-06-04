@@ -18,7 +18,7 @@ use Symfony\Component\Validator\Constraint;
  */
 class MaxTickets extends Constraint
 {
-    public $message = 'Il n\'est plus possible de réserver, le quota a été atteint.';
+    public $message = 'validator.max_ticket';
 
     public function getTargets()
     {

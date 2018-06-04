@@ -1,0 +1,7 @@
+validator:
+    max_ticket: "It is not possible to reserve anymore. There's {{ ticketsLeft }} tickets left for this day."
+    half_day: "After 14:00pm, only half-day tickets can be reserved"
+    not_public_holidays: "It's not possible to reserve a holiday"
+    not_tuesday: "It's not possible to reserve a tuesday"
+    not_sunday: "It's not possible to reserve a sunday"
+    message_great_than_equal: "This date must be greater than"

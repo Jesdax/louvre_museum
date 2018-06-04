@@ -1,0 +1,7 @@
+validator:
+    max_ticket: "Il n'est plus possible de réserver, le quota a été atteint. Il reste {{ ticketsLeft }} billets disponibles."
+    half_day: "il est 14h00 passés, seuls les billets à la demi-journée sont disponibles."
+    not_public_holidays: "La réservation n'est pas disponible les jours fériés"
+    not_tuesday: "La réservation n'est pas disponible le mardi"
+    not_sunday: "La réservation n'est pas disponible le dimanche"
+    message_great_than_equal: "Cette date doit être supérieur à"
