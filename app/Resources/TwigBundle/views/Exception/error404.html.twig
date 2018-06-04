@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ 'error.not_found'|trans }}</title>
+        <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}" />
+    </head>
+    <body>
+    <div class="row justify-content-center">
+        <img src="{{ asset('public/images/error404.png') }}" alt="error404"/>
+    </div>
+    <div class="row justify-content-center">
+        <p>Please return on the <a href="{{ path('accueil') }}">homepage</a></p>
+    </div>
+
+    </body>
+</html>
