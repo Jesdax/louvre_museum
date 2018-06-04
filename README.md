@@ -1,6 +1,8 @@
 Symfony Standard Edition
 ========================
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/37e296cc-4b63-4d48-99f5-f9a300cc3092/big.png)](https://insight.sensiolabs.com/projects/37e296cc-4b63-4d48-99f5-f9a300cc3092)
+
 **WARNING**: This distribution does not support Symfony 4. See the
 [Installing & Setting up the Symfony Framework][15] page to find a replacement
 that fits you best.
