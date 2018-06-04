@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{parent()}} - {{ 'contact.main_title'|trans }}
+{% endblock %}
+
+{% block body %}
+    <main class="container">
+        <div class="row form-style-title">
+            <h4>{{ 'contact.main_title'|trans }}</h4>
+        </div>
+        <div class="form-block">
+            <div>{{ 'contact.information'|trans }}</div>
+            <br>
+            <div>{{ 'contact.infos_prob'|trans }} <a href="https://www.ticketlouvre.fr/louvre/b2c/index.cfm/FAQ">FAQ</a> {{ 'contact.infos_prob_bis'|trans }}
+                <a href="mailto:assistance-billetterie@louvre.fr" rel="nofollow">assistance-billetterie@louvre.fr</a></div>
+        </div>
+        <div class="row form-style-title">
+            <h4>{{ 'contact.infos_gen'|trans }}</h4>
+        </div>
+        <div class="form-block">
+            <div>{{ 'contact.infos_gen_speech'|trans }}</div>
+            <br>
+            <div>{{ 'contact.infos_phone'|trans }} : +33 (0)1 40 20 53 17</div>
+            <br>
+            <div>{{ 'contact.infos_days'|trans }}</div>
+            <div><a href="mailto:info@louvre.fr" rel="nofollow">info@louvre.fr</a></div>
+            <br>
+            <div>{{ 'contact.infos_prepare'|trans }} :</div>
+            <div><a href="http://www.louvre.fr/preparer-sa-visite" rel="nofollow">{{ 'contact.here'|trans }}</a></div>
+            <br>
+            <div>{{ 'contact.infos_map'|trans }} :</div>
+            <div><a href="http://www.louvre.fr/plan" rel="nofollow">{{ 'contact.here'|trans }}</a></div>
+            <br>
+            <div>{{ 'contact.infos_handicap'|trans }} :</div>
+            <div>{{ 'contact.infos_phone'|trans }} : +33 (0)1 40 20 59 90</div>
+            <div><a href="mailto:handicap@louvre.fr" rel="nofollow">handicap@louvre.fr</a></div>
+        </div>
+
+    </main>
+{% endblock %}
+
+{% block infos %}{% endblock %}
