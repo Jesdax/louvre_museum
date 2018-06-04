@@ -50,7 +50,7 @@ class Booking
      * @Assert\NotBlank(groups={"bookingStep"})
      * @Assert\NotNull(groups={"bookingStep"})
      * @Assert\Date(groups={"bookingStep"})
-     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"}, message="Cette date doit être supérieur à {{ compared_value }}")
+     * @Assert\GreaterThanOrEqual("today", groups={"bookingStep"}, message="Ooops le retour vers le passé est interdit !")
      * @AssertAppli\NotPublicHolidays(groups={"bookingStep"})
      * @AssertAppli\NotTuesday(groups={"bookingStep"})
      * @AssertAppli\NotSunday(groups={"bookingStep"})
