@@ -1,79 +1,101 @@
-Symfony Standard Edition
+Symfony Standard Edition 3.4 ~ Louvre project
 ========================
 
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/37e296cc-4b63-4d48-99f5-f9a300cc3092/big.png)](https://insight.sensiolabs.com/projects/37e296cc-4b63-4d48-99f5-f9a300cc3092)
 
-**WARNING**: This distribution does not support Symfony 4. See the
-[Installing & Setting up the Symfony Framework][15] page to find a replacement
-that fits you best.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/320499f576184a08a4e0455b3c292b83)](https://www.codacy.com/app/Jesdax/louvre_museum?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Jesdax/louvre_museum&amp;utm_campaign=Badge_Grade)
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+**Contexte**
+-
+Le musée du Louvre vous a missionné pour un projet ambitieux : créer un nouveau système de réservation et de gestion des tickets en ligne pour diminuer les longues files d’attente et tirer parti de l’usage croissant des smartphones.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+**Cahier des charges**
+-
 
-What's inside?
---------------
+L’interface doit être accessible aussi bien sur ordinateur de bureau que tablettes et smartphones, et utiliser pour cela un design responsive.
 
-The Symfony Standard Edition is configured with the following defaults:
+L’interface doit être fonctionnelle, claire et rapide avant tout. Le client ne souhaite pas surcharger le site d’informations peu utiles : l’objectif est de permettre aux visiteurs d’acheter un billet rapidement.
 
-  * An AppBundle you can use to start coding;
+Il existe 2 types de billets : le billet « Journée » et le billet « Demi-journée » (il ne permet de rentrer qu’à partir de 14h00). Le musée est ouvert tous les jours sauf le mardi (et fermé les 1er mai, 1er novembre et 25 décembre).
 
-  * Twig as the only configured template engine;
+Le musée propose plusieurs types de tarifs :
 
-  * Doctrine ORM/DBAL;
+    Un tarif « normal » à partir de 12 ans à 16 €
 
-  * Swiftmailer;
+    Un tarif « enfant » à partir de 4 ans et jusqu’à 12 ans, à 8 € (l’entrée est gratuite pour les enfants de moins de 4 ans)
 
-  * Annotations enabled for everything.
+    Un tarif « senior » à partir de 60 ans pour 12  €
 
-It comes pre-configured with the following bundles:
+    Un tarif « réduit » de 10 € accordé dans certaines conditions (étudiant, employé du musée, d’un service du Ministère de la Culture, militaire…)
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+Pour commander, on doit sélectionner :
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+    Le jour de la visite
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+    Le type de billet (Journée, Demi-journée…). On peut commander un billet pour le jour même mais on ne peut plus commander de billet « Journée » une fois 14h00 passées.
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+    Le nombre de billets souhaités
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+Le client précise qu’il n’est pas possible de réserver pour les jours passés (!), les dimanches, les jours fériés et les jours où plus de 1000 billets ont été vendus en tout pour ne pas dépasser la capacité du musée.
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+Pour chaque billet, l’utilisateur doit indiquer son nom, son prénom, son pays et sa date de naissance. Elle déterminera le tarif du billet.
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+Si la personne dispose du tarif réduit, elle doit simplement cocher la case « Tarif réduit ». Le site doit indiquer qu’il sera nécessaire de présenter sa carte d’étudiant, militaire ou équivalent lors de l’entrée pour prouver qu’on bénéficie bien du tarif réduit.
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
+Le site récupèrera par ailleurs l’e-mail du visiteur afin de lui envoyer les billets. Il ne nécessitera pas de créer un compte pour commander.
 
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
+Le visiteur doit pouvoir payer avec la solution Stripe par carte bancaire.
 
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
+Le site doit gérer le retour du paiement. En cas d’erreur, il invite à recommencer l’opération. Si tout s’est bien passé, la commande est enregistrée et les billets sont envoyés au visiteur.
 
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
+Vous utiliserez les environnements de test fournis par Stripe pour simuler la transaction, afin de ne pas avoir besoin de rentrer votre propre carte bleue.
 
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
+    La création d'un back-office pour lister les clients et commandes n'est pas demandée. Seule l'interface client est nécessaire ici.
+    
+**Le billet**
 
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
+Un email de confirmation sera envoyé à l’utilisateur et fera foi de billet.
 
-Enjoy!
+Le mail doit indiquer:
 
-[1]:  https://symfony.com/doc/3.4/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.4/doctrine.html
-[8]:  https://symfony.com/doc/3.4/templating.html
-[9]:  https://symfony.com/doc/3.4/security.html
-[10]: https://symfony.com/doc/3.4/email.html
-[11]: https://symfony.com/doc/3.4/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
-[15]: https://symfony.com/doc/current/setup.html
+- Le nom et le logo du musée
+
+- La date de la réservation
+
+- Le tarif
+
+- Le nom de chaque visiteur
+
+- Le code de la réservation (un ensemble de lettres et de chiffres) 
+
+**Installation**
+=
+Php >= 5.6 & MySQL
+
+1- Positionnez vous dans un dossier (example: /var/www sous linux ou Documents sous windows)
+
+2- En ligne de commande, executer : 
+    **git clone + le lien https du repository**
+    
+3- Positionnez vous dans le dossier fraîchement cloner
+
+4- Télécharger les dépendances en executant en ligne de commande :
+    **composer install**
+    
+5- Remplissez les paramètres demandés
+
+6- Veuillez créer la base de données en rentrant en ligne de commande :
+    **php bin/console doctrine:database:create**
+    
+7- Entrez en ligne de commande :
+    **php bin/console doctrine:schema:update --force**
+    
+8- Si vous êtes en localhost, faite :
+    **php -S localhost:8888 -t /web**
+
+ou
+
+si vous avez cloné (sous linux) dans **/var/www/{dossier_cloner}** et que votre serveur apache est fonctionnelle alors redirigez vous vers le fichier **/web/app.php** de l'application.
+
+Enjoy !
+-
