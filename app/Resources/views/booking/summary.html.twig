@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }} - {{ 'step_title'|trans }} 3{% endblock %}
 
 {% block body %}
-    <div class="col-md-8 col-sm-12 form-style">
+    <div class="col-md-12 col-sm-12 form-style">
         <main>
             <div class="row form-style-title" >
                 <h4>{{ 'booking.summary'|trans }}{% block summaryTitle %}{% endblock %}</h4>
@@ -26,7 +26,7 @@
                 {% for ticket in booking.tickets %}
                     <tr>
                         <th scope="row">{{ loop.index }}</th>
-                        <td>{{ booking.dateOfVisit|localizeddate('short', 'none') }}</td>
+                        <td>{{ booking.dateOfVisit|date('d/m/Y') }}</td>
                         <td>{{ ticket.firstname }}</td>
                         <td>{{ ticket.lastname }}</td>
                         <td>{{ ((booking.type)?'booking.day' : 'booking.half_day')|trans }}</td>
@@ -37,11 +37,11 @@
                 </tbody>
             </table>
             <div class="row price">
-                <p>{{ 'booking.total_price'|trans }} : {{ booking.totalPrice }} € </p>
+                <p><strong>{{ 'booking.total_price'|trans }} : {{ booking.totalPrice }} € </strong></p>
             </div>
 
             {% block payment %}
-                <form action="{{ path('summary') }}" method="POST">
+                <form action="{{ path('summary') }}" method="POST" class="stripe-btn">
                     <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                             data-key="{{ stripe_public_key }}"
                             data-description="{{ 'payment.stripe_title'|trans }}"

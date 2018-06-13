@@ -20,7 +20,7 @@
     </div>
     <div>
         <ul style="list-style: none;">
-            <li><strong>{{ 'booking.dateOfVisit'|trans }}</strong> : {{ booking.dateOfVisit|localizeddate('short', 'none') }}</li>
+            <li><strong>{{ 'booking.dateOfVisit'|trans }}</strong> : {{ booking.dateOfVisit|date('d/m/Y') }}</li>
             <li><strong>{{ 'mail.booking.total_price'|trans }}</strong> : {{ booking.totalPrice }} €</li>
             <li><strong>{{ 'booking.type'|trans }}</strong> : {{ ((booking.type)?'booking.day' : 'booking.half_day')|trans }}</li>
         </ul>

@@ -21,13 +21,13 @@ class BookingTest extends WebTestCase
         $crawler = $client->request('GET', '/fr/');
 
         $form = $crawler->selectButton('index_validation')->form();
-        $form['booking[dateOfVisit]'] = '2018-06-06';
+        $form['booking[dateOfVisit]'] = '2018-06-14'; // Date change for valid test, put date >= today
         $form['booking[type]'] = 0;
         $form['booking[nbTickets]'] = 3;
         $form['booking[email]'] = ['first' => 'augustin.kavera@outlook.fr', 'second' => 'augustin.kavera@outlook.fr'];
         $crawler = $client->submit($form);
 
-        $this->assertTrue($client->getResponse()->isRedirect());
+        $this->assertTrue($client->getResponse()->isRedirect()); // check that the response is a redirect to any url
 
         $crawler = $client->followRedirect();
 
