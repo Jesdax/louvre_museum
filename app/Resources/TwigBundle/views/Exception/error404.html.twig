@@ -2,15 +2,16 @@
 <html>
     <head>
         <title>{{ 'error.not_found'|trans }}</title>
-        <link rel="stylesheet" href="{{ asset('public/css/bootstrap.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('public/css/style404.css') }}" />
     </head>
     <body>
-    <div class="row justify-content-center">
-        <img src="{{ asset('public/images/error404.png') }}" alt="error404"/>
-    </div>
-    <div class="row justify-content-center">
-        <p>Please return on the <a href="{{ path('accueil') }}">homepage</a></p>
+    <div class="glitch-wrapper">
+        <div class="glitch-text">
+            ERROR 404: Not found
+        </div>
     </div>
 
+    <a href="{{ path('accueil') }}"><button type="button">Homepage</button></a>
+    <script src="{{ asset('public/js/style404.js') }}"></script>
     </body>
 </html>

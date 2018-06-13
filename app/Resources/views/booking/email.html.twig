@@ -16,7 +16,7 @@
     </header>
 
     <div style="margin: 1rem 1rem;">
-        <h3> {{ 'summary'|trans({ '%transaction%': booking.transaction }) }} {{ booking.createAt|localizeddate('medium', 'none') }}</h3>
+        <h3> {{ 'summary'|trans({ '%transaction%': booking.transaction }) }} {{ booking.createAt|date('d/m/Y') }}</h3>
     </div>
     <div>
         <ul style="list-style: none;">
