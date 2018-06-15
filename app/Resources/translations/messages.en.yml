@@ -1,4 +1,4 @@
-body.main.title: 'Official Ticketing Service'
+body.main.title: 'Official Ticket office of the Louvre Museum'
 booking:
     day: Day
     day_schedule: 'Day : from 9am to 6pm'
@@ -46,7 +46,7 @@ header:
         language: Language
         museum: 'Louvre museum'
 licensed_by: is licensed by
-louvre_night: 'Louvre museum by night'
+louvre_day: 'Louvre museum by day'
 mail.booking.total_price: 'Booking''s total price'
 official_website: Official website of Louvre
 payment:

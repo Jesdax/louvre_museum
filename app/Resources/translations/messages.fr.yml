@@ -1,4 +1,4 @@
-body.main.title: 'Billetterie officielle'
+body.main.title: 'Billetterie officielle du Musée du Louvre'
 booking:
     day: Journée
     day_schedule: 'Journée : 9h00 - 18h00 '
@@ -46,7 +46,7 @@ header:
         language: Langue
         museum: Le Louvre
 licensed_by: ' font l''objet d''une licence '
-louvre_night: Le Louvre de nuit
+louvre_day: Le Louvre de jour
 mail.booking.total_price: Prix total de la commande
 official_website: Site officiel du Louvre
 payment:

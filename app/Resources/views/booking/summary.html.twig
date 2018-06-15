@@ -3,6 +3,7 @@
 {% block title %}{{ parent() }} - {{ 'step_title'|trans }} 3{% endblock %}
 
 {% block body %}
+    {% block block_img %}{% endblock %}
     <div class="col-md-12 col-sm-12 form-style">
         <main>
             <div class="row form-style-title" >
@@ -36,7 +37,7 @@
                 {%  endfor %}
                 </tbody>
             </table>
-            <div class="row price">
+            <div class="row price form-block">
                 <p><strong>{{ 'booking.total_price'|trans }} : {{ booking.totalPrice }} € </strong></p>
             </div>
 

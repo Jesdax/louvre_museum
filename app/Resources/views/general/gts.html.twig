@@ -5,9 +5,10 @@
 {% endblock %}
 
 {% block body %}
+    {% block block_img %}{% endblock %}
     <main class="form-style">
-        <div class="row justify-content-center">
-            <div class="form-block">
+        <div class="row form-block">
+            <div>
                 <ul class="cgv">
                     <li><a href="#1">Article 1 : {{ 'cgv.objet'|trans }} </a></li>
                     <li><a href="#2">Article 2 : {{ 'cgv.application'|trans }} </a></li>
