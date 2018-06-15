@@ -1,6 +1,6 @@
 body {
     height: 100%;
-    background-image: url("../../../web/public/images/background.jpg"); /* "../../../web/public/images/background.jpg" for css online*/
+    background-image: url("/public/images/background.jpg"); /* "../../../web/public/images/background.jpg" for css localhost*/
 }
 
 .container {
