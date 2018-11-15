@@ -81,10 +81,10 @@ practical_news:
         days_closures: Closures
         days_speech: January 1, May 1, May 8, December 25
     rates:
-        default: 'Normal rate, from 12 years '
-        child: 'Child rate, from 4 to 12 years '
-        under_four: 'Baby rate, child under 4 years '
-        senior: 'Senior rate, from 60 years '
+        default: 'Normal rate from 12 years '
+        child: 'Child rate from 4 to 12 years '
+        under_four: 'Baby rate child under 4 years '
+        senior: 'Senior rate from 60 years '
     reduce_rate : "The reduced rate is granted in certain conditions: students, employee of the museum, the serviceman, the department of the Ministry of Culture... A supporting document will be necessarily asked"
     way_to_go: 'Prepare your visit'
 step_title: Step

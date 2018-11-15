@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f94a5cf-3b91-4ca8-8e2f-23366812b0e6" name="Default" comment="" />
+    <list default="true" id="2f94a5cf-3b91-4ca8-8e2f-23366812b0e6" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/louvre_museum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/louvre_museum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/app/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppCache.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppCache.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error404.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error500.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/TwigBundle/views/Exception/error500.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/translations/validators.en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/translations/validators.fr.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.fr.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/email.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/email.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/final_summary.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/final_summary.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/summary.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/summary.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/booking/ticket.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/booking/ticket.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/form/fields.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/form/fields.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/general/contact.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/general/contact.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/general/gts.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/general/gts.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/general/legal-mentions.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/general/legal-mentions.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/general/pratical-infos.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/general/pratical-infos.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config_test.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config_test.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing_dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing_dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/src/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/AppBundle.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BookingController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BookingController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/GeneralViewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/GeneralViewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Booking.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Booking.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Ticket.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Ticket.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/BookingType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/BookingType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/TicketType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/TicketType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/TicketsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/TicketsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Manager/BookingManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Manager/BookingManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/BookingRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/BookingRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/TicketRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TicketRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/AgeService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/AgeService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/MailService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/MailService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/PriceService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/PriceService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Services/StripeInit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Services/StripeInit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/HalfDay.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/HalfDay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/HalfDayValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/HalfDayValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/MaxTickets.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/MaxTickets.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/MaxTicketsValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/MaxTicketsValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotPublicHolidays.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotPublicHolidays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotPublicHolidaysValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotPublicHolidaysValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotSunday.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotSunday.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotSundayValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotSundayValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotTuesday.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotTuesday.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotTuesdayValidator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Validator/Constraints/NotTuesdayValidator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/AgeTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/AgeTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/BookingTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/BookingTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/ManagerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/ManagerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/PagesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/PagesTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/AppBundle/PriceTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/AppBundle/PriceTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/SymfonyRequirements.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/SymfonyRequirements.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/web/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/app_dev.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/app_dev.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/web/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/css/fontawesome-all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/css/fontawesome-all.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/css/style404.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/css/style404.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/ico/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/ico/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/americainXpress.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/americainXpress.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/e_bleue.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/e_bleue.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/fb.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/fb.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/insta.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/insta.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/mastercard.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/mastercard.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/mastercard.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/mastercard.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/twitter.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/twitter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/visa.gif" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/visa.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/icones/visa.png" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/icones/visa.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/images/background.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/images/background.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/images/logo-louvre.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/images/logo-louvre.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/images/pic001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/images/pic001.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/js/bootstrap-datepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/js/bootstrap-datepicker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/js/style404.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/js/style404.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/web/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test-coverage/AppBundle.php.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/AppBundle.php.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/Controller/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test-coverage/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/test-coverage/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/test-coverage/index.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,40 +118,62 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="4397741">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BookingType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/BookingType.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="675">
+              <caret line="53" column="58" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
-              <folding>
-                <element signature="e#3981#3988#1#HTML" expanded="true" />
-                <element signature="e#6140#6146#0#HTML" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/js/main.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/app.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/public/css/style.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="134" column="13" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+            <state relative-caret-position="450">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -72,7 +200,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Resources/views/Exception/error404.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GeneralViewsController.php" />
         <option value="$PROJECT_DIR$/web/public/js/main.js" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Booking.php" />
@@ -123,6 +250,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/booking/summary.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/general/gts.html.twig" />
         <option value="$PROJECT_DIR$/web/public/css/style.css" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
       </list>
     </option>
   </component>
@@ -131,9 +259,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
   </component>
   <component name="PhpServers">
     <servers />
@@ -209,9 +334,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="25" />
-    <option name="width" value="917" />
-    <option name="height" value="920" />
+    <option name="x" value="1920" />
+    <option name="y" value="27" />
+    <option name="width" value="1853" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -223,69 +349,12 @@
           <expand>
             <path>
               <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="louvre_museum" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="booking" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="louvre_museum" type="b2602c69:ProjectViewProjectNode" />
-              <item name="louvre_museum" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="louvre_museum" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,7 +365,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../eLouvreProjectOC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -386,11 +455,16 @@
       <workItem from="1528872039105" duration="3100000" />
       <workItem from="1528888638317" duration="5069000" />
       <workItem from="1528905165515" duration="6388000" />
+      <workItem from="1529185773626" duration="88000" />
+      <workItem from="1529602425372" duration="437000" />
+      <workItem from="1532035047702" duration="1605000" />
+      <workItem from="1532075596891" duration="64000" />
+      <workItem from="1536546927863" duration="31000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="299162000" />
+    <option name="totallyTimeSpent" value="302117000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -403,61 +477,49 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="1920" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32998884" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.33110368" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.516165" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12285556" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32849163" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20254566" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32887402" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.118428335" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.31351352" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32960895" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32887402" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.44370124" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15329275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32887402" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36231884" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32960895" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32887402" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.36231884" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -487,20 +549,7 @@
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="3" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///tmp/fz3temp-2/.htaccess" />
     <entry file="file:///tmp/fz3temp-2/services.yml" />
     <entry file="file:///tmp/fz3temp-2/config.yml" />
     <entry file="file:///tmp/fz3temp-2/prod.log" />
@@ -512,16 +561,8 @@
     <entry file="file:///tmp/fz3temp-2/composer 2.json" />
     <entry file="file:///tmp/fz3temp-2/AppKernel.php" />
     <entry file="file:///tmp/fz3temp-2/louvre.conf" />
-    <entry file="file:///tmp/fz3temp-2/style.css" />
     <entry file="file:///tmp/fz3temp-2/dev.log" />
     <entry file="file:///tmp/fz3temp-2/louvre_error.log" />
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/DataFixtures/AppFixtures.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -570,7 +611,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/BookingType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
+        <state relative-caret-position="330">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
@@ -586,13 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="108" selection-start-line="18" selection-start-column="108" selection-end-line="18" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookingController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -659,10 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="92" selection-start-line="10" selection-start-column="92" selection-end-line="10" selection-end-column="92" />
-          <folding>
-            <element signature="e#3981#3988#1#HTML" expanded="true" />
-            <element signature="e#6140#6146#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -694,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/final_summary.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -724,10 +747,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/public/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="134" column="13" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
+        <state relative-caret-position="154">
+          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
         </state>
       </provider>
+    </entry>
+    <entry file="file:///tmp/fz3temp-2/style.css" />
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/BookingController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="53" column="58" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/booking/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/app_dev.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
